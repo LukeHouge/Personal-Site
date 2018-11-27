@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta property="og:title" content="Luke Houge | Portfolio" />
+		<meta property="og:image" content="images/og.jpg" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+		<script src="assets/js/modernizr-custom.js"></script>
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Luke Houge</strong> <span>PORTFOLIO</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<!-- Menu -->
+														<nav id="menu">
+					<nav id="ml-menu" class="menu">
+						<div class="menu__wrap">
+							<ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="../index.html">Landing / About</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="index.html">Portfolio Home</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="albums.html">Photography Home</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Albums</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Albums by type</a></li>
+							</ul>
+							<!-- Submenu 1 -->
+							<ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Vegetables">
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="amalfi.html">Amalfi Coast</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="rome.html">Rome</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="florence.html">Florence</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="still-life.html">Still-Life</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="Portraiture.html">Portraiture</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="yosemite.html">Yosemite</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="sanfran.html">San Francisco</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="kingscanyon.html">Kings Canyon & Sequoia</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="rockymountain.html">Rocky Mountain</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="denver.html">Denver & Great Sand Dunes</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="grandcanyon.html">Grand Canyon</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="monumentvalley.html">Monument Valley</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="arches.html">Arches</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="canyonlands.html">Canyonlands</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="capitalreef.html">Capital Reef</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="brycecanyon.html">Bryce Canyon</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="zion.html">Zion</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="playacar.html">Playacar</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="photo1.html">Digital Photo 1</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="dc.html">Washington D.C.</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="icecaves.html">Ice Caves</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="teddyroosevelt.html">Theodore Roosevelt</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="yellowstone.html">Yellowstone</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="grandteton.html">Grand Teton</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="badlands.html">Bandlands</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="lajolla.html">La Jolla</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="tanqueverde.html">Tanque Verde</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="floral.html">Floral</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="miscellaneous.html">Miscellaneous</a></li>
+							</ul>
+							<ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu">
+								<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-1" aria-owns="submenu-2-1" href="#">National Parks</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-2" aria-owns="submenu-2-2" href="#">Creative</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-3" aria-owns="submenu-2-3" href="#">Cities</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="miscellaneous.html">Other</a></li>
+							</ul>
+							<!-- Submenu 1-1 -->
+							<ul data-menu="submenu-2-1" id="submenu-2-1" class="menu__level" tabindex="-1" role="menu">
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="yosemite.html">Yosemite</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="kingscanyon.html">Kings Canyon & Sequoia</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="rockymountain.html">Rocky Mountain</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="grandcanyon.html">Grand Canyon</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="arches.html">Arches</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="canyonlands.html">Canyonlands</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="capitalreef.html">Capital Reef</a></li>
+								<UUli class="menu__item" role="menuitem"><a class="menu__link" href="brycecanyon.html">Bryce Canyon</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="zion.html">Zion</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="teddyroosevelt.html">Theodore Roosevelt</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="yellowstone.html">Yellowstone</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="grandteton.html">Grand Teton</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="badlands.html">Badlands</a></li>
+							</ul>
+							<ul data-menu="submenu-2-2" id="submenu-2-2" class="menu__level" tabindex="-1" role="menu">
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="still-life.html">Still-Life</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="Portraiture.html">Portraiture</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="photo1.html">Digital Photo 1</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="icecaves.html">Ice Caves</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="floral.html">Floral</a></li>
+							</ul>		
+							<ul data-menu="submenu-2-3" id="submenu-2-3" class="menu__level" tabindex="-1" role="menu">
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="amalfi.html">Amalfi Coast</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="rome.html">Rome</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="florence.html">Florence</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="sanfran.html">San Francisco</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="denver.html">Denver & Great Sand Dunes</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="monumentvalley.html">Monument Valley</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="playacar.html">Playacar</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="dc.html">Washington D.C.</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="lajolla.html">La Jolla</a></li>
+								<li class="menu__item" role="menuitem"><a class="menu__link" href="tanqueverde.html">Tanque Verde</a></li>
+							</ul>								
+						</div>
+					</nav>
+				</nav>
+
+
+
+				<!-- Banner -->
+				<!--
+					Note: If you'd like to use a video as your banner background, set the "data-video" attribute below
+					to the full filename of your video, but *exclude* the file extension. The template will automatically
+					generate a multi-format* <video> tag on platforms that support background videos, and simply skip the
+					step on those that don't (falling back on whatever you've set as the background image).
+
+					* Your video must be offered in both .mp4 and .webm formats to work everywhere.
+				-->
+					<section id="banner" data-video="images/banner.jpg">
+						<div class="inner">
+							<banner>
+								<h1>Hi, my name is Luke</h1>
+								<p>This is my portfolio, a collection of my
+work, passions, interests, and achievements.</p>
+							</banner>
+						</div>
+						<a href="#one" class="more">Learn More</a>
+					</section>
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+						
+
+						<!-- One -->
+							<section id="one" class="main">
+								<div class="inner spotlight style1">
+									<div class="content">
+										<header>
+											<a href="http://lukehouge.com"><h2>My Personal Site</h2></a>
+										</header>
+										<p>Where you are currently! I created this site as a way to present myself and show some of the sites, and photos I have taken. It originally started as a required online portfolio for a photography class, but I decided to stick with it, and update it and build it to what it is now. The landing page is the main hub, and then links to my portfolio of work (this site), and my photography portfolio (update coming soon).</p>
+									</div>
+									<!--
+										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
+										320x340 or at least the same aspect ratio (16:17).
+									-->
+									<a href="http://lukehouge.com"><span class="image"><img src="images/portfolio%20thumbs/lukehouge.png" alt="" /></span></a>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="main">
+								<div class="inner spotlight alt style2">
+									<div class="content">
+										<header>
+											<a href="http://guides.techlyconsulting.com/"><h2>Techly</h2></a>
+										</header>
+										<p>One of the very first sites I ever made! This was the project for the 2016-17 BPA Website Design Competition, and won 2nd place in the nation for the event. It was made by me, and three other friends. They managed the content, and I took care of making the actual website and coding/hosting. The topic given was DIY projects, so we decided to do it on something we all loved, computers! We made four different tutorial pages, each on a different computer building related subject. We also made a contact page, which has a distinctively different look to emphasize the different purpose it serves, communication rather than learning. I am very proud of this site because I think the colors are unique and bold, but work very well together. Also, the work that went into writing all of the pages is something I take pride in, we made a legitimate guide for people in the process of making a website for a competiton. The water-cooling page (which is the one I wrote, is extremely long, and detailed. It required a lot of research and work to complete, and is very thorough in my opinion. In this site, I also went crazy with details, and took it upon myself to learn all these little pieces that could make the site better, and implement them. Here is a list of such features:
+											<ul>
+												<li>Custom print view that omits certain elements to make printing easier, done in CSS without needing to use some special print button</li>
+												<li>A custom designed app logo if website is added to a home-screen on an iOS device</li>
+												<li>A custom preview that is using the open graph protocol, so if it is linked in an iMessage or on Twitter a full-size preview will be displayed</li>
+												<li>Custom scroll effect</li>
+												<li>Custom highlight color</li>
+											</ul>
+										</p>
+									</div>
+									<!--
+										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
+										320x340 or at least the same aspect ratio (16:17).
+									-->
+									<a href="http://guides.techlyconsulting.com/"><span class="image"><img src="images/portfolio%20thumbs/techly.png" alt="" /></span></a>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="main">
+								<div class="inner spotlight style3">
+									<div class="content">
+										<header>
+											<a href="http://bpacares.com"><h2>BPA Cares</h2></a>
+										</header>
+										<p>The second year project for BPA, which also made it to nationals and placed 2nd again. This was with the same group for the most part, and also made with the same process. This was a more strict requirement, with exact pages and information that had to be included. The task was to redewsig the official BPA cares site, <a href="http://www.bpa.org/service/bpacares">here</a>. This was very interesting, and different to me. It needs a different mindset, to think how the information could be reorganized and presented in a different way. We really tried to simplify the pages, and make all the pertinent information stand out, and I think we accomplished that.</p>
+									</div>
+									<!--
+										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
+										320x340 or at least the same aspect ratio (16:17).
+									-->
+									<a href="http://bpacares.com"><span class="image"><img src="images/portfolio%20thumbs/bpacares.png" alt="" /></span></a>
+								</div>
+							</section>
+						<!-- four -->
+							<section id="four" class="main">
+								<div class="inner spotlight alt style4">
+									<div class="content">
+										<header>
+											<a href="techlyconsulting.com"><h2>Techly Consulting</h2></a>
+										</header>
+										<p>This is my most recent site, and is currently under construction. I created it for a business venture that me and a friend are pursing.</p>
+									</div>
+									<!--
+										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
+										320x340 or at least the same aspect ratio (16:17).
+									-->
+									<a href="http://techlyconsulting.com"><span class="image"><img src="images/portfolio%20thumbs/techlyconsulting.png" alt="" /></span></a>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four" class="main special">
+								<div class="inner">
+									<header>
+										<h2>Other Interests and Passions</h2>
+									</header>
+									<div class="features">
+										<section>
+											<span class="icon major fa-camera  style1"></span>
+											<h3>Photography</h3>
+											<p>What this site is all about! I love photography and have ever since getting a point-and-shoot camera in 5th grade. This was my first real experience with photogrpahy and I have loved it ever since. The photo at the top of the cactus was actually taken on that camera way back then! Click <a href="http://www.lukehouge.com/portfolio/albums.html"><u> here</u> </a>to see my full portfolio!</p>
+										</section>
+										<section>
+											<span class="icon major fa-line-chart style3"></span>
+											<h3>Stock Market</h3>
+											<p>Ever since reading and watching <i>The Big Short</i> I have become increasingly interested in the stock market. I love looking at, researching, and buying stocks. I am also getting into ETFs, options trading, and now the FOREX market as well. Additionally, with the surge of Cryptocurrencies I had a little case of FOMO and had to dip into that as well.</p>
+										</section>
+										<section>
+											<span class="icon major fa-internet-explorer style4"></span>
+											<h3>Website Design</h3>
+											<p>Truly my biggest passion right now. I love web design so much because it combines the aspect of coding with graphic design, and visual arts. It is not just typing all day to get some more words types out, you get to create a beautiful site.</p>
+										</section>
+										<section>
+											<span class="icon major fa-code style2"></span>
+											<h3>Coding</h3>
+											<p>Be it HTML, CSS, Java, Python, or Visual Basic I love coding!</p>
+										</section>
+									</div>
+								</div>
+							</section>
+
+					</div>
+
+					<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="http://www.captureminnesota.com/users/lukehouge?page=1" class="icon alt fa-instagram"><span class="label">Capture MN</span></a></li>
+								<li><a href="https://www.linkedin.com/in/lukehouge/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/LukeHouge" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</div>
+						<p class="copyright">&copy; Luke Houge 2018. All rights reserved.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/classie.js"></script>
+		<script src="assets/js/dummydata.js"></script>
+		<script src="assets/js/menu.js"></script>
+		<script>
+		(function() {
+			var menuEl = document.getElementById('ml-menu'),
+				mlmenu = new MLMenu(menuEl, {
+					// breadcrumbsCtrl : true, // show breadcrumbs
+					// initialBreadcrumb : 'all', // initial breadcrumb text
+					backCtrl : false, // show back button
+					// itemsDelayInterval : 60, // delay between each menu item sliding animation
+					onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+				});
+	
+			// mobile menu toggle
+			var openMenuCtrl = document.querySelector('.action--open'),
+				closeMenuCtrl = document.querySelector('.action--close');
+	
+			openMenuCtrl.addEventListener('click', openMenu);
+			closeMenuCtrl.addEventListener('click', closeMenu);
+	
+			function openMenu() {
+				classie.add(menuEl, 'menu--open');
+				closeMenuCtrl.focus();
+			}
+	
+			function closeMenu() {
+				classie.remove(menuEl, 'menu--open');
+				openMenuCtrl.focus();
+			}
+	
+			// simulate grid content loading
+			var gridWrapper = document.querySelector('.content');
+	
+			function loadDummyData(ev, itemName) {
+				ev.preventDefault();
+	
+				closeMenu();
+				gridWrapper.innerHTML = '';
+				classie.add(gridWrapper, 'content--loading');
+				setTimeout(function() {
+					classie.remove(gridWrapper, 'content--loading');
+					gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+				}, 700);
+			}
+		})();
+		</script>
+	</body>
+</html>
