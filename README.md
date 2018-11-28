@@ -1,4 +1,4 @@
-# Portfolio
+# Personal Site
 My own personal landing page and portfolio to display my work and photography.
 
 ## Structure and Workflow
