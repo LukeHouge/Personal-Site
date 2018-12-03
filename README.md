@@ -1,4 +1,4 @@
-# Personal Site [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m779426128-6b6e81ed8dc987db17d4cad2.svg)](https://stats.uptimerobot.com/LZ40Lcoj4)
+# Personal Site [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m779426128-6b6e81ed8dc987db17d4cad2.svg)](https://stats.uptimerobot.com/N0422FmVZ)
 My own personal landing page and portfolio to display my work and photography.
 
 ## Structure and Workflow
