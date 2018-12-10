@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Luke's website",
+  "main": "index.js",
+  "dependencies": {
+    "nodemailer": "^4.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeHouge/Portfolio.git"
+  },
+  "author": "Luke Houge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukeHouge/Portfolio/issues"
+  },
+  "homepage": "https://github.com/LukeHouge/Portfolio#readme"
+}
