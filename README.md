@@ -1,6 +1,8 @@
 # Personal Site [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m779426128-6b6e81ed8dc987db17d4cad2.svg)](https://stats.uptimerobot.com/N0422FmVZ)
 My own personal landing page and portfolio to display my work and photography.
 
+![LH logo](https://raw.githubusercontent.com/LukeHouge/Personal-Site/master/logo.png)
+
 ## Structure and Workflow
  - Created on mac using Coda and VS Code
  - Served on an Ubuntu 18 LTS Server VM (virtualized on an ESXi host in my homelab) running a LAMP (Linux, Apache, mySQL, Php) stack.
