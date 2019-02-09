@@ -1,0 +1,39 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+
+
+/* Panel */
+
+	.panel {
+		margin: 0 auto;
+
+		> .image {
+			float: left;
+		}
+
+		> .content {
+			float: left;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		&.secondary {
+			> .content {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+/* Wrapper */
+
+	#wrapper {
+	}
