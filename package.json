@@ -4,15 +4,21 @@
   "description": "Luke Houge Portfolio",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src/**",
-    "test": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "lint": "eslint --ignore-path .gitignore .",
+    "pretest": "eslint --ignore-path .gitignore .",
     "coverage": "jest --collectCoverageFrom=src/**.js --coverage",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "test": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "Luke Houge",
   "license": "ISC",
   "devDependencies": {
     "coveralls": "^3.0.3",
+    "eslint": "^5.14.1",
+    "eslint-config-strongloop": "^2.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
     "jest": "^24.1.0"
-  }
+  },
+  "dependencies": {}
 }
