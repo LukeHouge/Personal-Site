@@ -1,4 +1,8 @@
-# Personal Site [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m779426128-6b6e81ed8dc987db17d4cad2.svg)](https://stats.uptimerobot.com/N0422FmVZ)[![Build Status](https://travis-ci.org/LukeHouge/Personal-Site.svg?branch=master)](https://travis-ci.org/LukeHouge/Personal-Site)
+# Personal Site 
+[![Uptime Robot status](https://img.shields.io/uptimerobot/status/m779426128-6b6e81ed8dc987db17d4cad2.svg)](https://stats.uptimerobot.com/N0422FmVZ)
+[![Build Status](https://travis-ci.org/LukeHouge/Personal-Site.svg?branch=master)](https://travis-ci.org/LukeHouge/Personal-Site)
+[![Coverage Status](https://coveralls.io/repos/github/LukeHouge/Personal-Site/badge.svg?branch=dev)](https://coveralls.io/github/LukeHouge/Personal-Site?branch=dev)
+
 My own personal landing page and portfolio to display my work and photography.
 
 ![LH logo](https://raw.githubusercontent.com/LukeHouge/Personal-Site/master/logo.png)
