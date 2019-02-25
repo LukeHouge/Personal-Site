@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Luke Houge Portfolio",
-  "main": "index.js",
+  "main": "serverp/index.js",
   "scripts": {
     "lint": "eslint src/**",
     "test": "jest",
