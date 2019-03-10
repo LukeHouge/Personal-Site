@@ -18,7 +18,7 @@ http.createServer((request, response) => {
         });
     }
 
-}).listen(creds.port);
+}).listen(3005);
 
 function sendMail(message) {
     var stream = fs.createWriteStream("mailScript.sh"); //creates a write stream to mailScript.sh script file
