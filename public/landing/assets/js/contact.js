@@ -11,29 +11,7 @@
  * If all fields are valid, sends the message to the appropriate areas.
  */
 function formSubmit() {
-    let inputObjects = document.querySelectorAll('.form-check');
-
-    let message = "";
-    let validFlag = true;
-    let email = "";
-
-    //checks all form inputs
-    for (x of inputObjects) {
-        x.addEventListener('input', inputChange);
-
-        if (validInput(x)) {
-            x.classList.remove('form-error');
-            message += "*" + x.title + ":* " + x.value + "\n";
-            if (x.title == "email") email = x.value;
-        } else {
-            validFlag = false;
-            x.classList.add('form-error');
-        }
-    }
-
-    if (!validCheckGroup(document.querySelectorAll('.required-check'))) validFlag = false;
-
-    if (validFlag) sendForm(message);
+    sendForm(message);
 }
 /**
  * Checks if the trimmed input value is valid or not. Valid input is not empty, and if the input 
