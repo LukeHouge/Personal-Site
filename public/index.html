@@ -58,28 +58,36 @@
 							<!-- Contact -->
 								<article id="contact">
 									<h2 class="major">Contact</h2>
-									<form action="server/server.js" method="POST">
-										<input type="hidden" name="_next" value="#thanks">
-										<input type="hidden" name="_subject" value="Luke Houge Portfolio Submission" />
-										<div class="field first half">
-												<span class="input"></span>
-												<label class="red" for="name">Name</label>
-												<input id="name" type="text" name="name" title="Format: Xx [space] Xx (e.g. Luke Houge)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" />
+									<div class="row gtr-uniform" id="contact-form">
+										<div class="col-6 col-12-xsmall">
+											<div class="form-label">First Name:*</div>
+											<input type="text" class="form-check" title="first-name" placeholder="Name" />
 										</div>
-										<div class="field half">
-												<span class="input"></span>
-												<label class="red" for="email">Email</label>
-												<input id="email" type="email" name="email" required />
+										<div class="col-6 col-12-xsmall">
+											<div class="form-label">Last Name:*</div>
+											<input type="text" class="form-check" title="last-name" placeholder="Name" />
 										</div>
-										<div class="field">
-												<label class="red"  for="message">Message</label>
-											<textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
-											<br>
+										<div class="col-12 col-12-xsmall">
+											<div class="form-label">Email:*</div>
+											<input type="email" class="form-check" title="Email" placeholder="Email" />
+											<span class="email-error" aria-live="polite"></span>
 										</div>
-										<div class="field first half">
-												<button type="submit" value="Submit" title="Submit form" class="button"><span>Submit</span></button>
+=										<!-- Break -->
+										<div class="col-12">
+											<div class="form-label">Message:*</div>
+											<textarea name="form-message" placeholder="Enter your message" rows="6" class="form-check"
+												title="Message"></textarea>
 										</div>
-									</form>
+										<!-- Break -->
+										<div class="col-12">
+											<div class="form-label">* Required Field</div>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li class="form-li"><input id="form-submit" class="form-button primary" type="submit" value="Submit" /></li>
+											</ul>
+										</div>
+									</div>
 								</article>
 								<article id="thanks">
 									<h2 class="major">Thanks!</h2>
@@ -103,47 +111,7 @@
 				<script src="landing/assets/js/util.js"></script>
 				<script src="landing/assets/js/main.js"></script>
 				<script src="landing/assets/js/modernizr.min.js"></script>
-				<script>
-					// for form validation
-					var unsupportedBrowsers = false;
-					if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || (navigator.userAgent.match(/MSIE\s(?!10)/))) {
-						unsupportedBrowsers = true;
-					}
-	
-					// Tests with Modernizr if supports HTML5 placeholder="" attribute. If old browser, load necessary JS files and run them
-					if (!Modernizr.input.placeholder) {
-						Modernizr.load({
-							load: [
-								'placeholder.min.js',
-							],
-							complete: function(){
-								$('input').placeholder();
-							}
-						})
-					}
-	
-					// ugly browser sniffer for form validation
-					if (unsupportedBrowsers) {
-						Modernizr.load({
-							load: [
-								'landing/assets/js/jquery.validate.min.js'
-							],
-							complete: function(){
-								// parse through each required input
-								$('form').find('input[required]').each(function () {
-									// add a class to each required field with "required" & the input type
-									// using the normal "getAttribute" method because jQuery's attr always returns "text"
-									$(this).attr('class', 'required ' + this.getAttribute('type')).removeAttr('required');
-								});
-	
-								// call jQuery validate plugin on each form
-								$('form').each(function () {
-									$(this).validate();
-								});
-							}
-						})
-					}
-				</script>
+				<script src="landing/assets/js/contact.js"></script>
 		</body>
 	</html>
 	
