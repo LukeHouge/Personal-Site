@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API for my portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeHouge/Personal-Site.git"
+  },
+  "author": "Luke Houge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukeHouge/Personal-Site/issues"
+  },
+  "homepage": "https://lukehouge.com"
+}
