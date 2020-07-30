@@ -126,7 +126,6 @@
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
 		text-decoration: none;
 		color: inherit;
 	}
@@ -571,6 +570,16 @@
 			display: none;
 		}
 
+/* Canvas */
+	.canvas {
+		background: url("../img/filler.png") center center/cover;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100vw;
+	}
+
 /* Image */
 
 	.image {
@@ -675,10 +684,13 @@
 		list-style: disc;
 		margin: 0 0 2rem 0;
 		padding-left: 1em;
+		text-decoration: none;
+		list-style-type:none;
 	}
 
 		ul li {
 			padding-left: 0.5em;
+			list-style-type:none;
 		}
 
 		ul.alt {
@@ -700,6 +712,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			text-decoration: none;
 		}
 
 			ul.icons li {
@@ -712,22 +725,13 @@
 				}
 
 				ul.icons li a {
-					border-radius: 100%;
-					box-shadow: inset 0 0 0 1px #ffffff;
 					display: inline-block;
 					height: 2.25rem;
 					line-height: 2.25rem;
 					text-align: center;
 					width: 2.25rem;
+					text-decoration: none;
 				}
-
-					ul.icons li a:hover {
-						background-color: rgba(255, 255, 255, 0.075);
-					}
-
-					ul.icons li a:active {
-						background-color: rgba(255, 255, 255, 0.175);
-					}
 
 		ul.actions {
 			cursor: default;
@@ -1109,7 +1113,6 @@
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		position: relative;
 		min-height: 100vh;
 		width: 100%;
 		padding: 4rem 2rem;
@@ -1164,10 +1167,6 @@
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-		background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
-		background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
-		background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
-		background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
 		max-width: 100%;
 		text-align: center;
 	}
@@ -1207,6 +1206,10 @@
 			border: solid 1px #ffffff;
 			border-radius: 100%;
 		}
+
+			#header .logo img {
+				margin-top: -1.5px;
+			}
 
 			#header .logo .icon:before {
 				font-size: 2rem;
@@ -1268,7 +1271,7 @@
 
 				#header nav ul li a {
 					display: block;
-					min-width: 7.5rem;
+					min-width: 10rem;
 					height: 2.75rem;
 					line-height: 2.75rem;
 					padding: 0 1.25rem 0 1.45rem;
@@ -1569,3 +1572,29 @@
 		body.is-loading #footer {
 			opacity: 0;
 		}
+
+		.icon-background-1 {
+			color: #E3607D;
+			-o-transition:.5s;
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			/* ...and now for the proper property */
+			transition:.5s;
+		}
+		.icon1:hover .icon-background-1 {
+			color: #B06068;	
+		}
+		.icon-background-2 {
+			color: #E3607D;
+			-o-transition:.5s;
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			/* ...and now for the proper property */
+			transition:.5s;
+		}
+		.icon2:hover .icon-background-2 {
+			color: #B06068;	
+		}
+	
