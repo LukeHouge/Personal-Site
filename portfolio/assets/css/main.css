@@ -4904,7 +4904,6 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
 		background-position: left center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -4913,6 +4912,24 @@
 		position: relative;
 		text-align: center;
 		overflow: hidden;
+	}
+	.photography {
+		background-image: url("../../images/banner.jpg");
+	}
+
+	#particles-js {
+		width: 100%;
+		min-height: 100vh;
+		position: absolute;
+        top: 0;
+		left: 0;
+		z-index: 100;
+		opacity: 0.2;
+	}
+
+	#banner h3 {
+		color: #84DCBD !important;
+		font-size: 40px;
 	}
 
 		#banner input[type="submit"],
