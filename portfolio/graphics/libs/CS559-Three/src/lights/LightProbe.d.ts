@@ -1,22 +1,20 @@
-import { SphericalHarmonics3 } from './../math/SphericalHarmonics3';
-import { Light } from './Light';
+import { SphericalHarmonics3 } from "./../math/SphericalHarmonics3";
+import { Light } from "./Light";
 
 export class LightProbe extends Light {
+  constructor(sh?: SphericalHarmonics3, intensity?: number);
 
-	constructor( sh?: SphericalHarmonics3, intensity?: number );
+  /**
+   * @default 'LightProbe'
+   */
+  type: string;
 
-	/**
-	 * @default 'LightProbe'
-	 */
-	type: string;
+  readonly isLightProbe: true;
 
-	readonly isLightProbe: true;
+  /**
+   * @default new THREE.SphericalHarmonics3()
+   */
+  sh: SphericalHarmonics3;
 
-	/**
-	 * @default new THREE.SphericalHarmonics3()
-	 */
-	sh: SphericalHarmonics3;
-
-	fromJSON( json: object ): LightProbe;
-
+  fromJSON(json: object): LightProbe;
 }

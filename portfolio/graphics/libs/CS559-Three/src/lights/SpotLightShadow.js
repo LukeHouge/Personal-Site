@@ -1,43 +1,41 @@
-import { LightShadow } from './LightShadow.js';
-import { MathUtils } from '../math/MathUtils.js';
-import { PerspectiveCamera } from '../cameras/PerspectiveCamera.js';
+import { LightShadow } from "./LightShadow.js";
+import { MathUtils } from "../math/MathUtils.js";
+import { PerspectiveCamera } from "../cameras/PerspectiveCamera.js";
 
 function SpotLightShadow() {
+  LightShadow.call(this, new PerspectiveCamera(50, 1, 0.5, 500));
 
-	LightShadow.call( this, new PerspectiveCamera( 50, 1, 0.5, 500 ) );
-
-	this.focus = 1;
-
+  this.focus = 1;
 }
 
-SpotLightShadow.prototype = Object.assign( Object.create( LightShadow.prototype ), {
+SpotLightShadow.prototype = Object.assign(
+  Object.create(LightShadow.prototype),
+  {
+    constructor: SpotLightShadow,
 
-	constructor: SpotLightShadow,
+    isSpotLightShadow: true,
 
-	isSpotLightShadow: true,
+    updateMatrices: function (light) {
+      const camera = this.camera;
 
-	updateMatrices: function ( light ) {
+      const fov = MathUtils.RAD2DEG * 2 * light.angle * this.focus;
+      const aspect = this.mapSize.width / this.mapSize.height;
+      const far = light.distance || camera.far;
 
-		const camera = this.camera;
+      if (
+        fov !== camera.fov ||
+        aspect !== camera.aspect ||
+        far !== camera.far
+      ) {
+        camera.fov = fov;
+        camera.aspect = aspect;
+        camera.far = far;
+        camera.updateProjectionMatrix();
+      }
 
-		const fov = MathUtils.RAD2DEG * 2 * light.angle * this.focus;
-		const aspect = this.mapSize.width / this.mapSize.height;
-		const far = light.distance || camera.far;
-
-		if ( fov !== camera.fov || aspect !== camera.aspect || far !== camera.far ) {
-
-			camera.fov = fov;
-			camera.aspect = aspect;
-			camera.far = far;
-			camera.updateProjectionMatrix();
-
-		}
-
-		LightShadow.prototype.updateMatrices.call( this, light );
-
-	}
-
-} );
-
+      LightShadow.prototype.updateMatrices.call(this, light);
+    },
+  }
+);
 
 export { SpotLightShadow };

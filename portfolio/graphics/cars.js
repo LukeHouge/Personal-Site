@@ -25,7 +25,10 @@ export class Car extends GrObject {
     car.add(axle);
 
     let wheelMat = new T.MeshStandardMaterial({ color: "#171717" });
-    let wheel = new T.Mesh(new T.CylinderGeometry(0.35, 0.35, 0.3, 32, 32), wheelMat);
+    let wheel = new T.Mesh(
+      new T.CylinderGeometry(0.35, 0.35, 0.3, 32, 32),
+      wheelMat
+    );
     wheel.position.y = 0.35;
     wheel.position.z = 0.5;
     wheel.position.x = 2.1;
@@ -173,7 +176,10 @@ export class Car2 extends GrObject {
     };
 
     const geometry3 = new T.ExtrudeGeometry(window1shape, extrudeSettings2);
-    let material3 = new T.MeshStandardMaterial({ color: "black", roughness: 0.1 });
+    let material3 = new T.MeshStandardMaterial({
+      color: "black",
+      roughness: 0.1,
+    });
     let window1 = new T.Mesh(geometry3, material3);
     car2.add(window1);
     window1.translateZ(-0.05);
@@ -213,7 +219,10 @@ export class Car2 extends GrObject {
     car2.add(mesh3);
 
     let wheelMat = new T.MeshStandardMaterial({ color: "#171717" });
-    let wheel = new T.Mesh(new T.CylinderGeometry(0.5, 0.5, 0.3, 32, 32), wheelMat);
+    let wheel = new T.Mesh(
+      new T.CylinderGeometry(0.5, 0.5, 0.3, 32, 32),
+      wheelMat
+    );
     wheel.position.z = 2;
     wheel.position.x = 1;
     wheel.rotateX(Math.PI / 2);

@@ -7,7 +7,7 @@
  * Test Objects - these examples are for use in testing the framework
  * and are less generally useful
  *
- * @module TestObjects 
+ * @module TestObjects
  */
 
 // we need to have the BaseClass definition
@@ -27,7 +27,7 @@ function degreesToRadians(deg) {
  * A simple object that is like a dump truck (with a hinge), but just made of
  * boxes.
  * A simple way to test a parametric object
- * 
+ *
  * It's also a simple example of a hierarchical object
  */
 export class HingeCube extends GrObject {
@@ -57,7 +57,7 @@ export class HingeCube extends GrObject {
       ["x", -5, 5, 2],
       ["z", -5, 5, 2],
       ["theta", -180, 180, 0],
-      ["tilt", 0, 90, 0]
+      ["tilt", 0, 90, 0],
     ]);
 
     this.group = group;
@@ -76,8 +76,8 @@ export class HingeCube extends GrObject {
 
 // for faking deferred loading
 // from https://flaviocopes.com/javascript-sleep/
-const sleep = milliseconds => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds));
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
 /**
@@ -97,7 +97,7 @@ export class DelayTest extends GrObject {
     super("Delay-Test", group);
     this.group = group;
     // use sleep, rather than OBJ loader
-    sleep(1500).then(function() {
+    sleep(1500).then(function () {
       group.add(
         new T.Mesh(
           new T.TorusKnotGeometry(),
@@ -123,7 +123,7 @@ export class BetterDelayTest extends GrObject {
     );
     group.add(tempCube);
     // use sleep, rather than OBJ loader
-    sleep(2000).then(function() {
+    sleep(2000).then(function () {
       group.remove(tempCube);
       group.add(
         new T.Mesh(
@@ -149,7 +149,7 @@ export class MaterialDelayTest extends GrObject {
     group.add(this.mesh);
     group.position.x = -3;
     // use sleep, rather than OBJ loader
-    sleep(1000).then(function() {
+    sleep(1000).then(function () {
       // note: we can't use "this" because this isn't lexically scoped
       self.material.setValues({ color: "red" });
       self.material.needsUpdate = true;

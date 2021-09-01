@@ -1,7 +1,7 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
+@import "libs/vars";
+@import "libs/functions";
+@import "libs/mixins";
+@import "libs/skel";
 
 /*
 	Dimension by Pixelarity
@@ -11,38 +11,38 @@
 
 /* BG */
 
-	#bg {
-		&:before {
-			background: _palette(bg-overlay);
-		}
-	}
+#bg {
+  &:before {
+    background: _palette(bg-overlay);
+  }
+}
 
 /* Header */
 
-	#header {
-		.logo {
-			margin: 0 auto;
-		}
+#header {
+  .logo {
+    margin: 0 auto;
+  }
 
-		.content {
-			display: inline-block;
-		}
+  .content {
+    display: inline-block;
+  }
 
-		nav {
-			ul {
-				display: inline-block;
+  nav {
+    ul {
+      display: inline-block;
 
-				 li {
-				 	display: inline-block;
-				 }
-			}
-		}
-	}
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
 
 /* Main */
 
-	#main {
-		article {
-			margin: 0 auto;
-		}
-	}
+#main {
+  article {
+    margin: 0 auto;
+  }
+}

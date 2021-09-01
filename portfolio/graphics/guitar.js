@@ -10,7 +10,8 @@ export {}; // null statement to tell VSCode we're doing a module
 /* no need for onload - we use defer */
 
 let canvas = document.getElementById("canvas11");
-if (!(canvas instanceof HTMLCanvasElement)) throw new Error("Canvas is not HTML Element");
+if (!(canvas instanceof HTMLCanvasElement))
+  throw new Error("Canvas is not HTML Element");
 let context = canvas.getContext("2d");
 
 drawBody(context, -70, 600);

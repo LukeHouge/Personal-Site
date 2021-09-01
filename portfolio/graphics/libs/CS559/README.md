@@ -8,9 +8,9 @@ Students are welcome to read the code. They should not modify it (for class use)
 
 These files were written by Michael Gleicher for the class, with contributions from the course staff.
 
-##  License
+## License
 
-This library is provided under a 2-clause BSD open source license. 
+This library is provided under a 2-clause BSD open source license.
 
 From: https://opensource.org/licenses/BSD-2-Clause
 

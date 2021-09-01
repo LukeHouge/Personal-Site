@@ -24,9 +24,8 @@ Notice how the track is used by the vehicles to figure out how to move.
     (so you don't have your eyes on the road literally).
 
     The Race Car FBX come from open game art https://opengameart.org/content/lowpoly-racecar
-    It is provided with a CC0 license, so I can use it. 
+    It is provided with a CC0 license, so I can use it.
     I converted it to FBX format using Blender.
-
 
 Helicopter:
 A simple example in terms of geometry, but a more complex behavior.

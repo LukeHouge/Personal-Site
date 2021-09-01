@@ -1,5 +1,5 @@
-import { Curve } from './Curve.js';
-import * as Curves from '../curves/Curves.js';
+import { Curve } from "./Curve.js";
+import * as Curves from "../curves/Curves.js";
 
 /**************************************************************
  *	Curved Path - a curve path is simply a array of connected
@@ -7,248 +7,203 @@ import * as Curves from '../curves/Curves.js';
  **************************************************************/
 
 function CurvePath() {
+  Curve.call(this);
 
-	Curve.call( this );
+  this.type = "CurvePath";
 
-	this.type = 'CurvePath';
-
-	this.curves = [];
-	this.autoClose = false; // Automatically closes the path
-
+  this.curves = [];
+  this.autoClose = false; // Automatically closes the path
 }
 
-CurvePath.prototype = Object.assign( Object.create( Curve.prototype ), {
+CurvePath.prototype = Object.assign(Object.create(Curve.prototype), {
+  constructor: CurvePath,
 
-	constructor: CurvePath,
+  add: function (curve) {
+    this.curves.push(curve);
+  },
 
-	add: function ( curve ) {
+  closePath: function () {
+    // Add a line curve if start and end of lines are not connected
+    const startPoint = this.curves[0].getPoint(0);
+    const endPoint = this.curves[this.curves.length - 1].getPoint(1);
 
-		this.curves.push( curve );
+    if (!startPoint.equals(endPoint)) {
+      this.curves.push(new Curves["LineCurve"](endPoint, startPoint));
+    }
+  },
 
-	},
+  // To get accurate point with reference to
+  // entire path distance at time t,
+  // following has to be done:
 
-	closePath: function () {
+  // 1. Length of each sub path have to be known
+  // 2. Locate and identify type of curve
+  // 3. Get t for the curve
+  // 4. Return curve.getPointAt(t')
 
-		// Add a line curve if start and end of lines are not connected
-		const startPoint = this.curves[ 0 ].getPoint( 0 );
-		const endPoint = this.curves[ this.curves.length - 1 ].getPoint( 1 );
+  getPoint: function (t) {
+    const d = t * this.getLength();
+    const curveLengths = this.getCurveLengths();
+    let i = 0;
 
-		if ( ! startPoint.equals( endPoint ) ) {
+    // To think about boundaries points.
 
-			this.curves.push( new Curves[ 'LineCurve' ]( endPoint, startPoint ) );
+    while (i < curveLengths.length) {
+      if (curveLengths[i] >= d) {
+        const diff = curveLengths[i] - d;
+        const curve = this.curves[i];
 
-		}
+        const segmentLength = curve.getLength();
+        const u = segmentLength === 0 ? 0 : 1 - diff / segmentLength;
 
-	},
+        return curve.getPointAt(u);
+      }
 
-	// To get accurate point with reference to
-	// entire path distance at time t,
-	// following has to be done:
+      i++;
+    }
 
-	// 1. Length of each sub path have to be known
-	// 2. Locate and identify type of curve
-	// 3. Get t for the curve
-	// 4. Return curve.getPointAt(t')
+    return null;
 
-	getPoint: function ( t ) {
+    // loop where sum != 0, sum > d , sum+1 <d
+  },
 
-		const d = t * this.getLength();
-		const curveLengths = this.getCurveLengths();
-		let i = 0;
+  // We cannot use the default THREE.Curve getPoint() with getLength() because in
+  // THREE.Curve, getLength() depends on getPoint() but in THREE.CurvePath
+  // getPoint() depends on getLength
 
-		// To think about boundaries points.
+  getLength: function () {
+    const lens = this.getCurveLengths();
+    return lens[lens.length - 1];
+  },
 
-		while ( i < curveLengths.length ) {
+  // cacheLengths must be recalculated.
+  updateArcLengths: function () {
+    this.needsUpdate = true;
+    this.cacheLengths = null;
+    this.getCurveLengths();
+  },
 
-			if ( curveLengths[ i ] >= d ) {
+  // Compute lengths and cache them
+  // We cannot overwrite getLengths() because UtoT mapping uses it.
 
-				const diff = curveLengths[ i ] - d;
-				const curve = this.curves[ i ];
+  getCurveLengths: function () {
+    // We use cache values if curves and cache array are same length
 
-				const segmentLength = curve.getLength();
-				const u = segmentLength === 0 ? 0 : 1 - diff / segmentLength;
+    if (this.cacheLengths && this.cacheLengths.length === this.curves.length) {
+      return this.cacheLengths;
+    }
 
-				return curve.getPointAt( u );
+    // Get length of sub-curve
+    // Push sums into cached array
 
-			}
+    const lengths = [];
+    let sums = 0;
 
-			i ++;
+    for (let i = 0, l = this.curves.length; i < l; i++) {
+      sums += this.curves[i].getLength();
+      lengths.push(sums);
+    }
 
-		}
+    this.cacheLengths = lengths;
 
-		return null;
+    return lengths;
+  },
 
-		// loop where sum != 0, sum > d , sum+1 <d
+  getSpacedPoints: function (divisions = 40) {
+    const points = [];
 
-	},
+    for (let i = 0; i <= divisions; i++) {
+      points.push(this.getPoint(i / divisions));
+    }
 
-	// We cannot use the default THREE.Curve getPoint() with getLength() because in
-	// THREE.Curve, getLength() depends on getPoint() but in THREE.CurvePath
-	// getPoint() depends on getLength
+    if (this.autoClose) {
+      points.push(points[0]);
+    }
 
-	getLength: function () {
+    return points;
+  },
 
-		const lens = this.getCurveLengths();
-		return lens[ lens.length - 1 ];
+  getPoints: function (divisions = 12) {
+    const points = [];
+    let last;
 
-	},
+    for (let i = 0, curves = this.curves; i < curves.length; i++) {
+      const curve = curves[i];
+      const resolution =
+        curve && curve.isEllipseCurve
+          ? divisions * 2
+          : curve && (curve.isLineCurve || curve.isLineCurve3)
+          ? 1
+          : curve && curve.isSplineCurve
+          ? divisions * curve.points.length
+          : divisions;
 
-	// cacheLengths must be recalculated.
-	updateArcLengths: function () {
+      const pts = curve.getPoints(resolution);
 
-		this.needsUpdate = true;
-		this.cacheLengths = null;
-		this.getCurveLengths();
+      for (let j = 0; j < pts.length; j++) {
+        const point = pts[j];
 
-	},
+        if (last && last.equals(point)) continue; // ensures no consecutive points are duplicates
 
-	// Compute lengths and cache them
-	// We cannot overwrite getLengths() because UtoT mapping uses it.
+        points.push(point);
+        last = point;
+      }
+    }
 
-	getCurveLengths: function () {
+    if (
+      this.autoClose &&
+      points.length > 1 &&
+      !points[points.length - 1].equals(points[0])
+    ) {
+      points.push(points[0]);
+    }
 
-		// We use cache values if curves and cache array are same length
+    return points;
+  },
 
-		if ( this.cacheLengths && this.cacheLengths.length === this.curves.length ) {
+  copy: function (source) {
+    Curve.prototype.copy.call(this, source);
 
-			return this.cacheLengths;
+    this.curves = [];
 
-		}
+    for (let i = 0, l = source.curves.length; i < l; i++) {
+      const curve = source.curves[i];
 
-		// Get length of sub-curve
-		// Push sums into cached array
+      this.curves.push(curve.clone());
+    }
 
-		const lengths = [];
-		let sums = 0;
+    this.autoClose = source.autoClose;
 
-		for ( let i = 0, l = this.curves.length; i < l; i ++ ) {
+    return this;
+  },
 
-			sums += this.curves[ i ].getLength();
-			lengths.push( sums );
+  toJSON: function () {
+    const data = Curve.prototype.toJSON.call(this);
 
-		}
+    data.autoClose = this.autoClose;
+    data.curves = [];
 
-		this.cacheLengths = lengths;
+    for (let i = 0, l = this.curves.length; i < l; i++) {
+      const curve = this.curves[i];
+      data.curves.push(curve.toJSON());
+    }
 
-		return lengths;
+    return data;
+  },
 
-	},
+  fromJSON: function (json) {
+    Curve.prototype.fromJSON.call(this, json);
 
-	getSpacedPoints: function ( divisions = 40 ) {
+    this.autoClose = json.autoClose;
+    this.curves = [];
 
-		const points = [];
+    for (let i = 0, l = json.curves.length; i < l; i++) {
+      const curve = json.curves[i];
+      this.curves.push(new Curves[curve.type]().fromJSON(curve));
+    }
 
-		for ( let i = 0; i <= divisions; i ++ ) {
-
-			points.push( this.getPoint( i / divisions ) );
-
-		}
-
-		if ( this.autoClose ) {
-
-			points.push( points[ 0 ] );
-
-		}
-
-		return points;
-
-	},
-
-	getPoints: function ( divisions = 12 ) {
-
-		const points = [];
-		let last;
-
-		for ( let i = 0, curves = this.curves; i < curves.length; i ++ ) {
-
-			const curve = curves[ i ];
-			const resolution = ( curve && curve.isEllipseCurve ) ? divisions * 2
-				: ( curve && ( curve.isLineCurve || curve.isLineCurve3 ) ) ? 1
-					: ( curve && curve.isSplineCurve ) ? divisions * curve.points.length
-						: divisions;
-
-			const pts = curve.getPoints( resolution );
-
-			for ( let j = 0; j < pts.length; j ++ ) {
-
-				const point = pts[ j ];
-
-				if ( last && last.equals( point ) ) continue; // ensures no consecutive points are duplicates
-
-				points.push( point );
-				last = point;
-
-			}
-
-		}
-
-		if ( this.autoClose && points.length > 1 && ! points[ points.length - 1 ].equals( points[ 0 ] ) ) {
-
-			points.push( points[ 0 ] );
-
-		}
-
-		return points;
-
-	},
-
-	copy: function ( source ) {
-
-		Curve.prototype.copy.call( this, source );
-
-		this.curves = [];
-
-		for ( let i = 0, l = source.curves.length; i < l; i ++ ) {
-
-			const curve = source.curves[ i ];
-
-			this.curves.push( curve.clone() );
-
-		}
-
-		this.autoClose = source.autoClose;
-
-		return this;
-
-	},
-
-	toJSON: function () {
-
-		const data = Curve.prototype.toJSON.call( this );
-
-		data.autoClose = this.autoClose;
-		data.curves = [];
-
-		for ( let i = 0, l = this.curves.length; i < l; i ++ ) {
-
-			const curve = this.curves[ i ];
-			data.curves.push( curve.toJSON() );
-
-		}
-
-		return data;
-
-	},
-
-	fromJSON: function ( json ) {
-
-		Curve.prototype.fromJSON.call( this, json );
-
-		this.autoClose = json.autoClose;
-		this.curves = [];
-
-		for ( let i = 0, l = json.curves.length; i < l; i ++ ) {
-
-			const curve = json.curves[ i ];
-			this.curves.push( new Curves[ curve.type ]().fromJSON( curve ) );
-
-		}
-
-		return this;
-
-	}
-
-} );
-
+    return this;
+  },
+});
 
 export { CurvePath };

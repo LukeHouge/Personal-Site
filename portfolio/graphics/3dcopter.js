@@ -96,7 +96,10 @@ body.rotateZ(T.MathUtils.degToRad(90));
 body.rotateX(T.MathUtils.degToRad(90));
 copter.add(body);
 
-const frontCone = new T.Mesh(new T.SphereGeometry(0.5, 32, 32, 0, Math.PI), grayMat);
+const frontCone = new T.Mesh(
+  new T.SphereGeometry(0.5, 32, 32, 0, Math.PI),
+  grayMat
+);
 frontCone.position.y = 2;
 frontCone.position.z = 0.74;
 copter.add(frontCone);

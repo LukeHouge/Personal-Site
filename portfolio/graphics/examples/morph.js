@@ -58,12 +58,18 @@ export class MorphTest extends GrObject {
     for (let i = 0; i < geometry.faces.length; i++) {
       // each vertex on the face
       let v = geometry.faces[i].a;
-      morphVerts[geometry.faces[i].a].x = geometry.faceVertexUvs[0][i][0].x * radius * 2;
-      morphVerts[geometry.faces[i].a].y = geometry.faceVertexUvs[0][i][0].y * radius * 2;
-      morphVerts[geometry.faces[i].b].x = geometry.faceVertexUvs[0][i][1].x * radius * 2;
-      morphVerts[geometry.faces[i].b].y = geometry.faceVertexUvs[0][i][1].y * radius * 2;
-      morphVerts[geometry.faces[i].c].x = geometry.faceVertexUvs[0][i][2].x * radius * 2;
-      morphVerts[geometry.faces[i].c].y = geometry.faceVertexUvs[0][i][2].y * radius * 2;
+      morphVerts[geometry.faces[i].a].x =
+        geometry.faceVertexUvs[0][i][0].x * radius * 2;
+      morphVerts[geometry.faces[i].a].y =
+        geometry.faceVertexUvs[0][i][0].y * radius * 2;
+      morphVerts[geometry.faces[i].b].x =
+        geometry.faceVertexUvs[0][i][1].x * radius * 2;
+      morphVerts[geometry.faces[i].b].y =
+        geometry.faceVertexUvs[0][i][1].y * radius * 2;
+      morphVerts[geometry.faces[i].c].x =
+        geometry.faceVertexUvs[0][i][2].x * radius * 2;
+      morphVerts[geometry.faces[i].c].y =
+        geometry.faceVertexUvs[0][i][2].y * radius * 2;
     }
     // make the morph target given the vertex positions
     geometry.morphTargets.push({ name: "flat", vertices: morphVerts });
@@ -87,6 +93,7 @@ export class MorphTest extends GrObject {
   stepWorld(delta, timeOfDay) {
     this.time += delta / 1000;
     // we do cos^2 since it causes things to dwell at the ends (looks better than abs)
-    this.mesh.morphTargetInfluences[0] = Math.cos(this.time) * Math.cos(this.time);
+    this.mesh.morphTargetInfluences[0] =
+      Math.cos(this.time) * Math.cos(this.time);
   }
 }

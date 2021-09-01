@@ -1,197 +1,164 @@
+(function ($) {
+  skel.breakpoints({
+    xlarge: "(max-width: 1680px)",
+    large: "(max-width: 1280px)",
+    medium: "(max-width: 980px)",
+    small: "(max-width: 736px)",
+    xsmall: "(max-width: 480px)",
+    xxsmall: "(max-width: 360px)",
+  });
 
+  $(function () {
+    var $window = $(window),
+      $document = $(document),
+      $body = $("body"),
+      $wrapper = $("#wrapper"),
+      $footer = $("#footer");
 
-(function($) {
+    // Disable animations/transitions until the page has loaded.
+    $window.on("load", function () {
+      window.setTimeout(function () {
+        $body.removeClass("is-loading-0");
 
-	skel.breakpoints({
-		xlarge:	'(max-width: 1680px)',
-		large:	'(max-width: 1280px)',
-		medium:	'(max-width: 980px)',
-		small:	'(max-width: 736px)',
-		xsmall:	'(max-width: 480px)',
-		xxsmall: '(max-width: 360px)'
-	});
+        window.setTimeout(function () {
+          $body.removeClass("is-loading-1");
+        }, 1500);
+      }, 100);
+    });
 
-	$(function() {
+    // Fix: Placeholder polyfill.
+    $("form").placeholder();
 
-		var	$window = $(window),
-			$document = $(document),
-			$body = $('body'),
-			$wrapper = $('#wrapper'),
-			$footer = $('#footer');
+    // Panels.
+    var $wrapper = $("#wrapper"),
+      $panels = $wrapper.children(".panel"),
+      locked = true;
 
-		// Disable animations/transitions until the page has loaded.
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading-0');
+    // Deactivate + hide all but the first panel.
+    $panels.not($panels.first()).addClass("inactive").hide();
 
-					window.setTimeout(function() {
-						$body.removeClass('is-loading-1');
-					}, 1500);
-				}, 100);
-			});
+    // Fix images.
+    $panels.each(function () {
+      var $this = $(this),
+        $image = $this.children(".image"),
+        $img = $image.find("img"),
+        position = $img.data("position");
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+      // Set background.
+      $image.css("background-image", "url(" + $img.attr("src") + ")");
 
-		// Panels.
-			var $wrapper = $('#wrapper'),
-				$panels = $wrapper.children('.panel'),
-				locked = true;
+      // Set position (if set).
+      if (position) $image.css("background-position", position);
 
-			// Deactivate + hide all but the first panel.
-				$panels.not($panels.first())
-					.addClass('inactive')
-					.hide();
+      // Hide original.
+      $img.hide();
+    });
 
-			// Fix images.
-				$panels.each(function() {
+    // Unlock after a delay.
+    window.setTimeout(function () {
+      locked = false;
+    }, 1250);
 
-					var	$this = $(this),
-						$image = $this.children('.image'),
-						$img = $image.find('img'),
-						position = $img.data('position');
+    // Click event.
+    $('a[href^="#"]').on("click", function (event) {
+      var $this = $(this),
+        id = $this.attr("href"),
+        $panel = $(id),
+        $ul = $this.parents("ul"),
+        delay = 0;
 
-					// Set background.
-						$image.css('background-image', 'url(' + $img.attr('src') + ')');
+      // Prevent default.
+      event.preventDefault();
+      event.stopPropagation();
 
-					// Set position (if set).
-						if (position)
-							$image.css('background-position', position);
+      // Locked? Bail.
+      if (locked) return;
 
-					// Hide original.
-						$img.hide();
+      // Lock.
+      locked = true;
 
-				});
+      // Activate link.
+      $this.addClass("active");
 
-			// Unlock after a delay.
-				window.setTimeout(function() {
-					locked = false;
-				}, 1250);
+      if ($ul.hasClass("spinX") || $ul.hasClass("spinY")) delay = 250;
 
-			// Click event.
-				$('a[href^="#"]').on('click', function(event) {
+      // Delay.
+      window.setTimeout(function () {
+        // Deactivate all panels.
+        $panels.addClass("inactive");
 
-					var $this = $(this),
-						id = $this.attr('href'),
-						$panel = $(id),
-						$ul = $this.parents('ul'),
-						delay = 0;
+        // Deactivate footer.
+        $footer.addClass("inactive");
 
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
+        // Delay.
+        window.setTimeout(function () {
+          // Hide all panels.
+          $panels.hide();
 
-					// Locked? Bail.
-						if (locked)
-							return;
+          // Show target panel.
+          $panel.show();
 
-					// Lock.
-						locked = true;
+          // Reset scroll.
+          $document.scrollTop(0);
 
-					// Activate link.
-						$this.addClass('active');
+          // Delay.
+          window.setTimeout(function () {
+            // Activate target panel.
+            $panel.removeClass("inactive");
 
-						if ($ul.hasClass('spinX')
-						||	$ul.hasClass('spinY'))
-							delay = 250;
+            // Deactivate link.
+            $this.removeClass("active");
 
-					// Delay.
-						window.setTimeout(function() {
+            // Unlock.
+            locked = false;
 
-							// Deactivate all panels.
-								$panels.addClass('inactive');
+            // IE: Refresh.
+            $window.triggerHandler("--refresh");
 
-							// Deactivate footer.
-								$footer.addClass('inactive');
+            window.setTimeout(function () {
+              // Activate footer.
+              $footer.removeClass("inactive");
+            }, 250);
+          }, 100);
+        }, 350);
+      }, delay);
+    });
 
-							// Delay.
-								window.setTimeout(function() {
+    // IE: Fixes.
+    if (skel.vars.IEVersion < 12) {
+      // Layout fixes.
+      $window.on("--refresh", function () {
+        // Fix min-height/flexbox.
+        $wrapper.css("height", "auto");
 
-									// Hide all panels.
-										$panels.hide();
+        window.setTimeout(function () {
+          var h = $wrapper.height(),
+            wh = $window.height();
 
-									// Show target panel.
-										$panel.show();
+          if (h < wh) $wrapper.css("height", "100vh");
+        }, 0);
 
-									// Reset scroll.
-										$document.scrollTop(0);
+        // Fix panel image/content heights (IE<10 only).
+        if (skel.vars.IEVersion < 10) {
+          var $panel = $(".panel").not(".inactive"),
+            $image = $panel.find(".image"),
+            $content = $panel.find(".content"),
+            ih = $image.height(),
+            ch = $content.height(),
+            x = Math.max(ih, ch);
 
-									// Delay.
-										window.setTimeout(function() {
+          $image.css("min-height", x + "px");
+          $content.css("min-height", x + "px");
+        }
+      });
 
-											// Activate target panel.
-												$panel.removeClass('inactive');
+      $window.on("load", function () {
+        $window.triggerHandler("--refresh");
+      });
 
-											// Deactivate link.
-												$this.removeClass('active');
-
-											// Unlock.
-												locked = false;
-
-											// IE: Refresh.
-												$window.triggerHandler('--refresh');
-
-											window.setTimeout(function() {
-
-												// Activate footer.
-													$footer.removeClass('inactive');
-
-											}, 250);
-
-										}, 100);
-
-								}, 350);
-
-						}, delay);
-
-				});
-
-		// IE: Fixes.
-			if (skel.vars.IEVersion < 12) {
-
-				// Layout fixes.
-					$window.on('--refresh', function() {
-
-						// Fix min-height/flexbox.
-							$wrapper.css('height', 'auto');
-
-							window.setTimeout(function() {
-
-								var h = $wrapper.height(),
-									wh = $window.height();
-
-								if (h < wh)
-									$wrapper.css('height', '100vh');
-
-							}, 0);
-
-						// Fix panel image/content heights (IE<10 only).
-							if (skel.vars.IEVersion < 10) {
-
-								var $panel = $('.panel').not('.inactive'),
-									$image = $panel.find('.image'),
-									$content = $panel.find('.content'),
-									ih = $image.height(),
-									ch = $content.height(),
-									x = Math.max(ih, ch);
-
-								$image.css('min-height', x + 'px');
-								$content.css('min-height', x + 'px');
-
-							}
-
-					});
-
-					$window.on('load', function() {
-						$window.triggerHandler('--refresh');
-					});
-
-				// Remove spinX/spinY.
-					$('.spinX').removeClass('spinX');
-					$('.spinY').removeClass('spinY');
-
-			}
-
-	});
-
+      // Remove spinX/spinY.
+      $(".spinX").removeClass("spinX");
+      $(".spinY").removeClass("spinY");
+    }
+  });
 })(jQuery);

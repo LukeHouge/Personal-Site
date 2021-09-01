@@ -22,7 +22,7 @@ A version of the documentation is available on [GitHub Pages](https://cs559.gith
 ## What is this anyway?
 
 The framework is some common code that sets up simple demos in that use [THREE.JS](https://threejs.org/).
-It's main goal is to make it easier to get simple demos done. It takes care of the common things you need to 
+It's main goal is to make it easier to get simple demos done. It takes care of the common things you need to
 put into every single demo you make, so you don't have to re-type it every time. The framework code allows you to focus on creating graphics objects and defining their behavior (for animation). You don’t need to worry about setting up a user interface, or the basic stuff of the world. It will give you “good enough” defaults that you can focus on the parts of the assignment you care about.
 
 The main pieces that the Framework provides:
@@ -62,7 +62,7 @@ export class BetterDelayTest extends GrObject {
     );
     group.add(tempCube);
     // use sleep, rather than OBJ loader
-    sleep(2000).then(function() {
+    sleep(2000).then(function () {
       group.remove(tempCube);
       group.add(
         new T.Mesh(
@@ -75,9 +75,9 @@ export class BetterDelayTest extends GrObject {
 }
 ```
 
-##  License
+## License
 
-This library is provided under a 2-clause BSD open source license. 
+This library is provided under a 2-clause BSD open source license.
 
 From: https://opensource.org/licenses/BSD-2-Clause
 

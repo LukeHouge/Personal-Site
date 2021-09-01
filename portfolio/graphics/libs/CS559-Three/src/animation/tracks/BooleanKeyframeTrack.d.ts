@@ -1,12 +1,10 @@
-import { KeyframeTrack } from './../KeyframeTrack';
+import { KeyframeTrack } from "./../KeyframeTrack";
 
 export class BooleanKeyframeTrack extends KeyframeTrack {
+  constructor(name: string, times: any[], values: any[]);
 
-	constructor( name: string, times: any[], values: any[] );
-
-	/**
-	 * @default 'bool'
-	 */
-	ValueTypeName: string;
-
+  /**
+   * @default 'bool'
+   */
+  ValueTypeName: string;
 }

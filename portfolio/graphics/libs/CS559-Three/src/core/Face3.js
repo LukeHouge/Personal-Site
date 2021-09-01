@@ -1,58 +1,45 @@
-import { Color } from '../math/Color.js';
-import { Vector3 } from '../math/Vector3.js';
+import { Color } from "../math/Color.js";
+import { Vector3 } from "../math/Vector3.js";
 
 class Face3 {
+  constructor(a, b, c, normal, color, materialIndex = 0) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
 
-	constructor( a, b, c, normal, color, materialIndex = 0 ) {
+    this.normal = normal && normal.isVector3 ? normal : new Vector3();
+    this.vertexNormals = Array.isArray(normal) ? normal : [];
 
-		this.a = a;
-		this.b = b;
-		this.c = c;
+    this.color = color && color.isColor ? color : new Color();
+    this.vertexColors = Array.isArray(color) ? color : [];
 
-		this.normal = ( normal && normal.isVector3 ) ? normal : new Vector3();
-		this.vertexNormals = Array.isArray( normal ) ? normal : [];
+    this.materialIndex = materialIndex;
+  }
 
-		this.color = ( color && color.isColor ) ? color : new Color();
-		this.vertexColors = Array.isArray( color ) ? color : [];
+  clone() {
+    return new this.constructor().copy(this);
+  }
 
-		this.materialIndex = materialIndex;
+  copy(source) {
+    this.a = source.a;
+    this.b = source.b;
+    this.c = source.c;
 
-	}
+    this.normal.copy(source.normal);
+    this.color.copy(source.color);
 
-	clone() {
+    this.materialIndex = source.materialIndex;
 
-		return new this.constructor().copy( this );
+    for (let i = 0, il = source.vertexNormals.length; i < il; i++) {
+      this.vertexNormals[i] = source.vertexNormals[i].clone();
+    }
 
-	}
+    for (let i = 0, il = source.vertexColors.length; i < il; i++) {
+      this.vertexColors[i] = source.vertexColors[i].clone();
+    }
 
-	copy( source ) {
-
-		this.a = source.a;
-		this.b = source.b;
-		this.c = source.c;
-
-		this.normal.copy( source.normal );
-		this.color.copy( source.color );
-
-		this.materialIndex = source.materialIndex;
-
-		for ( let i = 0, il = source.vertexNormals.length; i < il; i ++ ) {
-
-			this.vertexNormals[ i ] = source.vertexNormals[ i ].clone();
-
-		}
-
-		for ( let i = 0, il = source.vertexColors.length; i < il; i ++ ) {
-
-			this.vertexColors[ i ] = source.vertexColors[ i ].clone();
-
-		}
-
-		return this;
-
-	}
-
+    return this;
+  }
 }
-
 
 export { Face3 };

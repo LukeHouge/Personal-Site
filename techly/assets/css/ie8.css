@@ -1,38 +1,36 @@
-
-
 /* Button */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-	}
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  position: relative;
+  -ms-behavior: url("assets/js/ie/PIE.htc");
+}
 
 /* Image */
 
-	.image img {
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-	}
+.image img {
+  -ms-behavior: url("assets/js/ie/PIE.htc");
+}
 
 /* Banner */
 
-	#banner {
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-	}
+#banner {
+  -ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+}
 
-		#banner:after {
-			display: none;
-		}
+#banner:after {
+  display: none;
+}
 
 /* Main */
 
-	#main > header {
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-	}
+#main > header {
+  -ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+}
 
-		#main > header:after {
-			display: none;
-		}
+#main > header:after {
+  display: none;
+}

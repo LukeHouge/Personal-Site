@@ -1,15 +1,14 @@
-import {
-	CanvasTexture,
-	Loader,
-	LoadingManager
-} from '../../../src/Three';
+import { CanvasTexture, Loader, LoadingManager } from "../../../src/Three";
 
 export class LottieLoader extends Loader {
+  constructor(manager?: LoadingManager);
 
-	constructor( manager?: LoadingManager );
+  load(
+    url: string,
+    onLoad: (texture: CanvasTexture) => void,
+    onProgress?: (event: ProgressEvent) => void,
+    onError?: (event: ErrorEvent) => void
+  ): void;
 
-	load( url: string, onLoad: ( texture: CanvasTexture ) => void, onProgress?: ( event: ProgressEvent ) => void, onError?: ( event: ErrorEvent ) => void ) : void;
-
-	setQuality( value: Number ) : void;
-
+  setQuality(value: Number): void;
 }

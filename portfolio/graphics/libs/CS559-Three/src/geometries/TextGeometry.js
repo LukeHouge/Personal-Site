@@ -15,26 +15,22 @@
  * }
  */
 
-import { Geometry } from '../core/Geometry.js';
-import { TextBufferGeometry } from './TextBufferGeometry.js';
+import { Geometry } from "../core/Geometry.js";
+import { TextBufferGeometry } from "./TextBufferGeometry.js";
 
 class TextGeometry extends Geometry {
+  constructor(text, parameters) {
+    super();
+    this.type = "TextGeometry";
 
-	constructor( text, parameters ) {
+    this.parameters = {
+      text: text,
+      parameters: parameters,
+    };
 
-		super();
-		this.type = 'TextGeometry';
-
-		this.parameters = {
-			text: text,
-			parameters: parameters
-		};
-
-		this.fromBufferGeometry( new TextBufferGeometry( text, parameters ) );
-		this.mergeVertices();
-
-	}
-
+    this.fromBufferGeometry(new TextBufferGeometry(text, parameters));
+    this.mergeVertices();
+  }
 }
 
 export { TextGeometry };

@@ -115,7 +115,7 @@ export function draggablePoints(
         let p2 = (select + 1) % thePoints.length;
         let newPt = [
           (thePoints[p1][0] + thePoints[p2][0]) / 2,
-          (thePoints[p1][1] + thePoints[p2][1]) / 2
+          (thePoints[p1][1] + thePoints[p2][1]) / 2,
         ];
         thePoints.splice(p1 + 1, 0, newPt);
       } else {

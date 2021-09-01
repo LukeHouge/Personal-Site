@@ -1,58 +1,48 @@
-import { ImageLoader } from './ImageLoader.js';
-import { CubeTexture } from '../textures/CubeTexture.js';
-import { Loader } from './Loader.js';
+import { ImageLoader } from "./ImageLoader.js";
+import { CubeTexture } from "../textures/CubeTexture.js";
+import { Loader } from "./Loader.js";
 
-function CubeTextureLoader( manager ) {
-
-	Loader.call( this, manager );
-
+function CubeTextureLoader(manager) {
+  Loader.call(this, manager);
 }
 
-CubeTextureLoader.prototype = Object.assign( Object.create( Loader.prototype ), {
+CubeTextureLoader.prototype = Object.assign(Object.create(Loader.prototype), {
+  constructor: CubeTextureLoader,
 
-	constructor: CubeTextureLoader,
+  load: function (urls, onLoad, onProgress, onError) {
+    const texture = new CubeTexture();
 
-	load: function ( urls, onLoad, onProgress, onError ) {
+    const loader = new ImageLoader(this.manager);
+    loader.setCrossOrigin(this.crossOrigin);
+    loader.setPath(this.path);
 
-		const texture = new CubeTexture();
+    let loaded = 0;
 
-		const loader = new ImageLoader( this.manager );
-		loader.setCrossOrigin( this.crossOrigin );
-		loader.setPath( this.path );
+    function loadTexture(i) {
+      loader.load(
+        urls[i],
+        function (image) {
+          texture.images[i] = image;
 
-		let loaded = 0;
+          loaded++;
 
-		function loadTexture( i ) {
+          if (loaded === 6) {
+            texture.needsUpdate = true;
 
-			loader.load( urls[ i ], function ( image ) {
+            if (onLoad) onLoad(texture);
+          }
+        },
+        undefined,
+        onError
+      );
+    }
 
-				texture.images[ i ] = image;
+    for (let i = 0; i < urls.length; ++i) {
+      loadTexture(i);
+    }
 
-				loaded ++;
-
-				if ( loaded === 6 ) {
-
-					texture.needsUpdate = true;
-
-					if ( onLoad ) onLoad( texture );
-
-				}
-
-			}, undefined, onError );
-
-		}
-
-		for ( let i = 0; i < urls.length; ++ i ) {
-
-			loadTexture( i );
-
-		}
-
-		return texture;
-
-	}
-
-} );
-
+    return texture;
+  },
+});
 
 export { CubeTextureLoader };

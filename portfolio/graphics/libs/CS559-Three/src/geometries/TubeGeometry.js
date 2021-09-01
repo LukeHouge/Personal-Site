@@ -1,38 +1,41 @@
-import { Geometry } from '../core/Geometry.js';
-import { TubeBufferGeometry } from './TubeBufferGeometry.js';
+import { Geometry } from "../core/Geometry.js";
+import { TubeBufferGeometry } from "./TubeBufferGeometry.js";
 
 class TubeGeometry extends Geometry {
+  constructor(path, tubularSegments, radius, radialSegments, closed, taper) {
+    super();
+    this.type = "TubeGeometry";
 
-	constructor( path, tubularSegments, radius, radialSegments, closed, taper ) {
+    this.parameters = {
+      path: path,
+      tubularSegments: tubularSegments,
+      radius: radius,
+      radialSegments: radialSegments,
+      closed: closed,
+    };
 
-		super();
-		this.type = 'TubeGeometry';
+    if (taper !== undefined)
+      console.warn("THREE.TubeGeometry: taper has been removed.");
 
-		this.parameters = {
-			path: path,
-			tubularSegments: tubularSegments,
-			radius: radius,
-			radialSegments: radialSegments,
-			closed: closed
-		};
+    const bufferGeometry = new TubeBufferGeometry(
+      path,
+      tubularSegments,
+      radius,
+      radialSegments,
+      closed
+    );
 
-		if ( taper !== undefined ) console.warn( 'THREE.TubeGeometry: taper has been removed.' );
+    // expose internals
 
-		const bufferGeometry = new TubeBufferGeometry( path, tubularSegments, radius, radialSegments, closed );
+    this.tangents = bufferGeometry.tangents;
+    this.normals = bufferGeometry.normals;
+    this.binormals = bufferGeometry.binormals;
 
-		// expose internals
+    // create geometry
 
-		this.tangents = bufferGeometry.tangents;
-		this.normals = bufferGeometry.normals;
-		this.binormals = bufferGeometry.binormals;
-
-		// create geometry
-
-		this.fromBufferGeometry( bufferGeometry );
-		this.mergeVertices();
-
-	}
-
+    this.fromBufferGeometry(bufferGeometry);
+    this.mergeVertices();
+  }
 }
 
 export { TubeGeometry };

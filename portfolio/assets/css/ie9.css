@@ -6,55 +6,55 @@
 
 /* Spotlight */
 
-	.spotlight:after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+.spotlight:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-	.spotlight .content {
-		float: left;
-		width: 60%;
-	}
+.spotlight .content {
+  float: left;
+  width: 60%;
+}
 
-	.spotlight .image {
-		float: left;
-		margin-right: 0 !important;
-		margin-left: 4em !important;
-	}
+.spotlight .image {
+  float: left;
+  margin-right: 0 !important;
+  margin-left: 4em !important;
+}
 
 /* Features */
 
-	.features:after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+.features:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-	.features > * {
-		float: left;
-	}
+.features > * {
+  float: left;
+}
 
 /* Header */
 
-	#header .logo {
-		position: absolute;
-		top: 0;
-		left: 1.5em;
-	}
+#header .logo {
+  position: absolute;
+  top: 0;
+  left: 1.5em;
+}
 
-	#header nav {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
+#header nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 /* Banner */
 
-	#banner {
-		min-height: 0;
-	}
+#banner {
+  min-height: 0;
+}
 
-		#banner .more {
-			display: none;
-		}
+#banner .more {
+  display: none;
+}

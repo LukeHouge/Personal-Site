@@ -1,13 +1,11 @@
-import { PerspectiveCamera } from './PerspectiveCamera';
+import { PerspectiveCamera } from "./PerspectiveCamera";
 
 export class ArrayCamera extends PerspectiveCamera {
+  constructor(cameras?: PerspectiveCamera[]);
 
-	constructor( cameras?: PerspectiveCamera[] );
-
-	/**
-	 * @default []
-	 */
-	cameras: PerspectiveCamera[];
-	readonly isArrayCamera: true;
-
+  /**
+   * @default []
+   */
+  cameras: PerspectiveCamera[];
+  readonly isArrayCamera: true;
 }

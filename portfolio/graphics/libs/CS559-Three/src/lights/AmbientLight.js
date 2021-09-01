@@ -1,20 +1,15 @@
-import { Light } from './Light.js';
+import { Light } from "./Light.js";
 
-function AmbientLight( color, intensity ) {
+function AmbientLight(color, intensity) {
+  Light.call(this, color, intensity);
 
-	Light.call( this, color, intensity );
-
-	this.type = 'AmbientLight';
-
+  this.type = "AmbientLight";
 }
 
-AmbientLight.prototype = Object.assign( Object.create( Light.prototype ), {
+AmbientLight.prototype = Object.assign(Object.create(Light.prototype), {
+  constructor: AmbientLight,
 
-	constructor: AmbientLight,
-
-	isAmbientLight: true
-
-} );
-
+  isAmbientLight: true,
+});
 
 export { AmbientLight };

@@ -321,7 +321,10 @@ face.add(cone); // add the cone
  * make the hat of the snowman with a cylinder
  */
 // define the brim
-ring = new T.Mesh(new T.BoxGeometry(3, 0.2, 3), new T.MeshStandardMaterial({ color: 0x646464 }));
+ring = new T.Mesh(
+  new T.BoxGeometry(3, 0.2, 3),
+  new T.MeshStandardMaterial({ color: 0x646464 })
+);
 ring.position.y = 9.5; // position the ring
 face.add(ring); // add to face group
 

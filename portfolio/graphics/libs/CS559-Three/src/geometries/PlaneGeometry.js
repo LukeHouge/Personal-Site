@@ -1,26 +1,24 @@
-import { Geometry } from '../core/Geometry.js';
-import { PlaneBufferGeometry } from './PlaneBufferGeometry.js';
+import { Geometry } from "../core/Geometry.js";
+import { PlaneBufferGeometry } from "./PlaneBufferGeometry.js";
 
 class PlaneGeometry extends Geometry {
+  constructor(width, height, widthSegments, heightSegments) {
+    super();
 
-	constructor( width, height, widthSegments, heightSegments ) {
+    this.type = "PlaneGeometry";
 
-		super();
+    this.parameters = {
+      width: width,
+      height: height,
+      widthSegments: widthSegments,
+      heightSegments: heightSegments,
+    };
 
-		this.type = 'PlaneGeometry';
-
-		this.parameters = {
-			width: width,
-			height: height,
-			widthSegments: widthSegments,
-			heightSegments: heightSegments
-		};
-
-		this.fromBufferGeometry( new PlaneBufferGeometry( width, height, widthSegments, heightSegments ) );
-		this.mergeVertices();
-
-	}
-
+    this.fromBufferGeometry(
+      new PlaneBufferGeometry(width, height, widthSegments, heightSegments)
+    );
+    this.mergeVertices();
+  }
 }
 
 export { PlaneGeometry };

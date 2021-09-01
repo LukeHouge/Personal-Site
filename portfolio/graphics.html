@@ -1,810 +1,388 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-  <title>Graphics</title>
-  <meta charset="utf-8" />
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1" />
-  <meta property="og:title"
-        content="Luke Houge" />
-  <meta property="og:image"
-        content="images/og.jpg" />
-  <link rel="stylesheet"
-        href="./assets/css/main.css" />
-  <link rel="stylesheet"
-        type="text/css"
-        href="./assets/css/component.css" />
-  <script src="./assets/js/modernizr-custom.js"></script>
-  <link rel="icon"
-        href="./../landing/images/lhlogo.png" />
+    <title>Graphics</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta property="og:title" content="Luke Houge"/>
+    <meta property="og:image" content="images/og.jpg"/>
+    <link rel="stylesheet" href="./assets/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/component.css"/>
+    <script src="./assets/js/modernizr-custom.js"></script>
+    <link rel="icon" href="./../landing/images/lhlogo.png"/>
 </head>
 
 <body>
-  <!-- Page Wrapper -->
-  <div id="page-wrapper">
+<!-- Page Wrapper -->
+<div id="page-wrapper">
     <!-- Header -->
-    <header id="header">
-      <a href="../index.html"
-         class="logo"><strong>Luke Houge</strong> <span>PORTFOLIO</span></a>
-      <nav>
-        <ul>
-          <a href="#menu">Menu</a>
-        </ul>
-      </nav>
+    <header id="header"><a href="../index.html" class="logo"><strong>Luke Houge</strong> <span>PORTFOLIO</span></a>
+        <nav>
+            <ul><a href="#menu">Menu</a></ul>
+        </nav>
     </header>
-
-    <!-- Menu -->
     <!-- Menu -->
     <nav id="menu">
-      <nav id="ml-menu"
-           class="menu">
-        <div class="menu__wrap">
-          <ul data-menu="main"
-              class="menu__level"
-              tabindex="-1"
-              role="menu"
-              aria-label="All">
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="../index.html">Landing / About</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="index.html">Portfolio Home</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="albums.html">Photography Home</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 data-submenu="submenu-1"
-                 aria-owns="submenu-1"
-                 href="#">Albums</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 data-submenu="submenu-2"
-                 aria-owns="submenu-2"
-                 href="#">Albums by type</a>
-            </li>
-          </ul>
-          <!-- Submenu 1 -->
-          <ul data-menu="submenu-1"
-              id="submenu-1"
-              class="menu__level"
-              tabindex="-1"
-              role="menu"
-              aria-label="Vegetables">
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="oahu.html">Oahu</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="bigIsland.html">Big Island</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="maui.html">Maui</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="amalfi.html">Amalfi Coast</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="rome.html">Rome</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="florence.html">Florence</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="still-life.html">Still-Life</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="Portraiture.html">Portraiture</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="yosemite.html">Yosemite</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="sanfran.html">San Francisco</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="kingscanyon.html">Kings Canyon & Sequoia</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="rockymountain.html">Rocky Mountain</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="denver.html">Denver & Great Sand Dunes</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="grandcanyon.html">Grand Canyon</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="monumentvalley.html">Monument Valley</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="arches.html">Arches</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="canyonlands.html">Canyonlands</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="capitalreef.html">Capital Reef</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="brycecanyon.html">Bryce Canyon</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="zion.html">Zion</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="playacar.html">Playacar</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="photo1.html">Digital Photo 1</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="dc.html">Washington D.C.</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="icecaves.html">Ice Caves</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="teddyroosevelt.html">Theodore Roosevelt</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="yellowstone.html">Yellowstone</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="grandteton.html">Grand Teton</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="badlands.html">Bandlands</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="lajolla.html">La Jolla</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="tanqueverde.html">Tanque Verde</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="floral.html">Floral</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="miscellaneous.html">Miscellaneous</a>
-            </li>
-          </ul>
-          <ul data-menu="submenu-2"
-              id="submenu-2"
-              class="menu__level"
-              tabindex="-1"
-              role="menu">
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 data-submenu="submenu-2-1"
-                 aria-owns="submenu-2-1"
-                 href="#">National Parks</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 data-submenu="submenu-2-2"
-                 aria-owns="submenu-2-2"
-                 href="#">Creative</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 data-submenu="submenu-2-3"
-                 aria-owns="submenu-2-3"
-                 href="#">Cities</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="miscellaneous.html">Other</a>
-            </li>
-          </ul>
-          <!-- Submenu 1-1 -->
-          <ul data-menu="submenu-2-1"
-              id="submenu-2-1"
-              class="menu__level"
-              tabindex="-1"
-              role="menu">
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="yosemite.html">Yosemite</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="kingscanyon.html">Kings Canyon & Sequoia</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="rockymountain.html">Rocky Mountain</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="grandcanyon.html">Grand Canyon</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="arches.html">Arches</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="canyonlands.html">Canyonlands</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="capitalreef.html">Capital Reef</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="brycecanyon.html">Bryce Canyon</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="zion.html">Zion</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="teddyroosevelt.html">Theodore Roosevelt</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="yellowstone.html">Yellowstone</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="grandteton.html">Grand Teton</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="badlands.html">Badlands</a>
-            </li>
-          </ul>
-          <ul data-menu="submenu-2-2"
-              id="submenu-2-2"
-              class="menu__level"
-              tabindex="-1"
-              role="menu">
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="still-life.html">Still-Life</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="Portraiture.html">Portraiture</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="photo1.html">Digital Photo 1</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="icecaves.html">Ice Caves</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="floral.html">Floral</a>
-            </li>
-          </ul>
-          <ul data-menu="submenu-2-3"
-              id="submenu-2-3"
-              class="menu__level"
-              tabindex="-1"
-              role="menu">
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="oahu.html">Oahu</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="bigIsland.html">Big Island</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="maui.html">Maui</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="amalfi.html">Amalfi Coast</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="rome.html">Rome</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="florence.html">Florence</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="sanfran.html">San Francisco</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="denver.html">Denver & Great Sand Dunes</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="monumentvalley.html">Monument Valley</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="playacar.html">Playacar</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="dc.html">Washington D.C.</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="lajolla.html">La Jolla</a>
-            </li>
-            <li class="menu__item"
-                role="menuitem">
-              <a class="menu__link"
-                 href="tanqueverde.html">Tanque Verde</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <nav id="ml-menu" class="menu">
+            <div class="menu__wrap">
+                <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="../index.html">Landing / About</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="index.html">Portfolio Home</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="albums.html">Photography Home</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Albums</a>
+                    </li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Albums by
+                        type</a></li>
+                </ul>
+                <!-- Submenu 1 -->
+                <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Vegetables">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="oahu.html">Oahu</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="bigIsland.html">Big Island</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="maui.html">Maui</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="amalfi.html">Amalfi Coast</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="rome.html">Rome</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="florence.html">Florence</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="still-life.html">Still-Life</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="Portraiture.html">Portraiture</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="yosemite.html">Yosemite</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="sanfran.html">San Francisco</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="kingscanyon.html">Kings Canyon & Sequoia</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="rockymountain.html">Rocky Mountain</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="denver.html">Denver & Great Sand Dunes</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="grandcanyon.html">Grand Canyon</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="monumentvalley.html">Monument Valley</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="arches.html">Arches</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="canyonlands.html">Canyonlands</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="capitalreef.html">Capital Reef</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="brycecanyon.html">Bryce Canyon</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="zion.html">Zion</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="playacar.html">Playacar</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="photo1.html">Digital Photo 1</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="dc.html">Washington D.C.</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="icecaves.html">Ice Caves</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="teddyroosevelt.html">Theodore Roosevelt</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="yellowstone.html">Yellowstone</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="grandteton.html">Grand Teton</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="badlands.html">Bandlands</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="lajolla.html">La Jolla</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="tanqueverde.html">Tanque Verde</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="floral.html">Floral</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="miscellaneous.html">Miscellaneous</a></li>
+                </ul>
+                <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-1" aria-owns="submenu-2-1" href="#">National
+                        Parks</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-2" aria-owns="submenu-2-2"
+                                                              href="#">Creative</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-3" aria-owns="submenu-2-3"
+                                                              href="#">Cities</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="miscellaneous.html">Other</a></li>
+                </ul>
+                <!-- Submenu 1-1 -->
+                <ul data-menu="submenu-2-1" id="submenu-2-1" class="menu__level" tabindex="-1" role="menu">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="yosemite.html">Yosemite</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="kingscanyon.html">Kings Canyon & Sequoia</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="rockymountain.html">Rocky Mountain</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="grandcanyon.html">Grand Canyon</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="arches.html">Arches</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="canyonlands.html">Canyonlands</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="capitalreef.html">Capital Reef</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="brycecanyon.html">Bryce Canyon</a></li>
+                    <li claass="testing" role="test">Hi
+                    </li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="zion.html">Zion</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="teddyroosevelt.html">Theodore Roosevelt</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="yellowstone.html">Yellowstone</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="grandteton.html">Grand Teton</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="badlands.html">Badlands</a></li>
+                </ul>
+                <ul data-menu="submenu-2-2" id="submenu-2-2" class="menu__level" tabindex="-1" role="menu">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="still-life.html">Still-Life</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="Portraiture.html">Portraiture</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="photo1.html">Digital Photo 1</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="icecaves.html">Ice Caves</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="floral.html">Floral</a></li>
+                </ul>
+                <ul data-menu="submenu-2-3" id="submenu-2-3" class="menu__level" tabindex="-1" role="menu">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="oahu.html">Oahu</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="bigIsland.html">Big Island</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="maui.html">Maui</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="amalfi.html">Amalfi Coast</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="rome.html">Rome</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="florence.html">Florence</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="sanfran.html">San Francisco</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="denver.html">Denver & Great Sand Dunes</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="monumentvalley.html">Monument Valley</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="playacar.html">Playacar</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="dc.html">Washington D.C.</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="lajolla.html">La Jolla</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="tanqueverde.html">Tanque Verde</a></li>
+                </ul>
+            </div>
+        </nav>
     </nav>
-
     <!-- Wrapper -->
     <div id="wrapper">
-      <!-- Main -->
-      <section id="main"
-               class="main">
-        <div class="inner">
-          <header class="major">
-            <h1>Graphics</h1>
-          </header>
-          <!-- One -->
-          <section id="one"
-                   class="main">
-            <div class="inner spotlight alt style1">
-              <div class="content">
-                <header>
-                  <a href="">
-                    <h2>Fireworks</h2>
-                  </a>
-                </header>
-                <p>
-                  The first somewhat non-trivial thing I made in graphics. You can click and a "firework" will make its
-                  way to your mouse click and "explode". Little circles that
-                  move up the screen at random positions, speeds, and to random heights before
-                  "exploding" into little pieces. This little program captures the idea that
-                  Canvas is an immediate mode API, and you need to keep track of objects yourself,
-                  in your own data structures. In this case the objects are little circles with
-                  positions, speeds, etc. and also the pieces after they explode which also need
-                  to track their lifespan so they can fade, and eventually disappear. This also
-                  highlighted the importance of removing objects from said data structure after
-                  leaving screen, and clearing and redrawing each time in an animation loop to
-                  create movement. </p>
-                <center>
-                  <a href="graphics/fireworks.html"><img src="graphics/images/fireworks.gif"><br><a
-                       href="graphics/fireworks.html"
-                       class="button special">Open</a></a>
-                  <details>
-                    <summary>
-                      View Code
-                      <span class="icon">👇</span>
-                    </summary>
-                    <script src="https://gist.github.com/LukeHouge/c61bd9afa158ddd87c26006964764575.js"></script>
-                  </details>
-                </center>
-
-                </p>
-              </div>
+        <!-- Main -->
+        <section id="main" class="main">
+            <div class="inner">
+                <header class="major">
+                    <h1>Graphics</h1></header>
+                <!-- One -->
+                <section id="one" class="main">
+                    <div class="inner spotlight alt style1">
+                        <div class="content">
+                            <header>
+                                <a href="">
+                                    <h2>Fireworks</h2></a>
+                            </header>
+                            <p> The first somewhat non-trivial thing I made in graphics. You can click and a "firework" will make its way to your
+                                mouse click and "explode". Little circles that move up the screen at random positions, speeds, and to random heights
+                                before "exploding" into little pieces. This little program captures the idea that Canvas is an immediate mode API, and
+                                you need to keep track of objects yourself, in your own data structures. In this case the objects are little circles
+                                with positions, speeds, etc. and also the pieces after they explode which also need to track their lifespan so they
+                                can fade, and eventually disappear. This also highlighted the importance of removing objects from said data structure
+                                after leaving screen, and clearing and redrawing each time in an animation loop to create movement. </p>
+                            <center>
+                                <a href="graphics/fireworks.html"><img src="graphics/images/fireworks.gif"> <br><a href="graphics/fireworks.html"
+                                                                                                                   class="button special">Open</a></a>
+                                <details>
+                                    <summary> View Code <span class="icon">👇</span></summary>
+                                    <script src="https://gist.github.com/LukeHouge/c61bd9afa158ddd87c26006964764575.js"></script>
+                                </details>
+                            </center>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Two -->
+                <section id="one" class="main">
+                    <div class="inner spotlight alt style1">
+                        <div class="content">
+                            <header>
+                                <a href="">
+                                    <h2>SVG Coffee Cups</h2></a>
+                            </header>
+                            <p> This is a very basic SVG image I made, inspired by my love of coffee! It utilizes hierarchy, definitions, re-use,
+                                etc. </p>
+                            <center><img src="graphics/coffee.svg" style="border:2px solid darkred"/>
+                                <details>
+                                    <summary> View Code <span class="icon">👇</span></summary>
+                                    <script src="https://gist.github.com/LukeHouge/52e36a17d57144ffa97c39a189a08d08.js"></script>
+                                </details>
+                            </center>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Three -->
+                <section id="one" class="main">
+                    <div class="inner spotlight alt style1">
+                        <div class="content">
+                            <header>
+                                <a href="">
+                                    <h2>Quadcopter</h2></a>
+                            </header>
+                            <p> This is a scene that highlights hierarchal motion, animation, and object orienting and positioning. The quadcopters
+                                are modeled roughly after the DJI Spark drone. </p>
+                            <center>
+                                <a href="graphics/copter.html"><img src="graphics/images/copter.gif"> <br><a href="graphics/copter.html"
+                                                                                                             class="button special">Open</a></a>
+                                <details>
+                                    <summary> View Code <span class="icon">👇</span></summary>
+                                    <script src="https://gist.github.com/LukeHouge/d925d269c1b322ad51029972feb9e89f.js"></script>
+                                </details>
+                            </center>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Three -->
+                <section id="one" class="main">
+                    <div class="inner spotlight alt style1">
+                        <div class="content">
+                            <header>
+                                <a href="">
+                                    <h2>Flocking</h2></a>
+                            </header>
+                            <p> This... </p>
+                            <center>
+                                <a href="graphics/flocking.html"><img src="graphics/images/flock.gif"> <br><a href="graphics/flocking.html"
+                                                                                                              class="button special">Open</a></a>
+                                <details>
+                                    <summary> View Code <span class="icon">👇</span></summary>
+                                    <script src="https://gist.github.com/LukeHouge/0d5de0a4521cd86af9f372edc3ce7c6e.js"></script>
+                                </details>
+                            </center>
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </section>
-          <!-- Two -->
-          <section id="one"
-                   class="main">
+        </section>
+        <!-- Three -->
+        <section id="one" class="main">
             <div class="inner spotlight alt style1">
-              <div class="content">
-                <header>
-                  <a href="">
-                    <h2>SVG Coffee Cups</h2>
-                  </a>
-                </header>
-                <p>
-                  This is a very basic SVG image I made, inspired by my love of coffee! It utilizes hierarchy,
-                  definitions, re-use, etc. </p>
-                <center>
-                  <img src="graphics/coffee.svg"
-                       style="border:2px solid darkred" />
-                  <details>
-                    <summary>
-                      View Code
-                      <span class="icon">👇</span>
-                    </summary>
-                    <script src="https://gist.github.com/LukeHouge/52e36a17d57144ffa97c39a189a08d08.js"></script>
-
-                  </details>
-                </center>
-                </p>
-              </div>
+                <div class="content">
+                    <header>
+                        <a href="">
+                            <h2>Guitar</h2></a>
+                    </header>
+                    <p> This is a canvas drawing I made of a guitar to learn the concepts behind bezier curves, and show my love for music and great
+                        guitar solos! </p>
+                    <center>
+                        <canvas id="canvas11" height="1200" width="600" style="border: 1px solid blue"></canvas>
+                        <script src="graphics/guitar.js" type="module" defer></script>
+                        <details>
+                            <summary> View Code <span class="icon">👇</span></summary>
+                            <script src="https://gist.github.com/LukeHouge/83a65e16a614a6a625714eec55370ede.js"></script>
+                        </details>
+                    </center>
+                    </p>
+                </div>
             </div>
-          </section>
-          <!-- Three -->
-          <section id="one"
-                   class="main">
+        </section>
+        <!-- Three -->
+        <section id="one" class="main">
             <div class="inner spotlight alt style1">
-              <div class="content">
-                <header>
-                  <a href="">
-                    <h2>Quadcopter</h2>
-                  </a>
-                </header>
-                <p>
-                  This is a scene that highlights hierarchal motion, animation, and object orienting and positioning.
-                  The quadcopters are modeled roughly after the DJI Spark drone. </p>
-                <center>
-                  <a href="graphics/copter.html"><img src="graphics/images/copter.gif"><br><a
-                       href="graphics/copter.html"
-                       class="button special">Open</a></a>
-                  <details>
-                    <summary>
-                      View Code
-                      <span class="icon">👇</span>
-                    </summary>
-                    <script src="https://gist.github.com/LukeHouge/d925d269c1b322ad51029972feb9e89f.js"></script>
-                  </details>
-                </center>
-                </p>
-              </div>
+                <div class="content">
+                    <header>
+                        <a href="">
+                            <h2>Train</h2></a>
+                    </header>
+                    <p> This ... </p>
+                    <center>
+                        <a href="graphics/train.html"><img src="graphics/images/train.gif"> <br><a href="graphics/train.html" class="button special">Open</a></a>
+                        <details>
+                            <summary> View Code <span class="icon">👇</span></summary>
+                            <script src="https://gist.github.com/LukeHouge/d0ab8d9412e79302528230c74cbb8e7a.js"></script>
+                        </details>
+                    </center>
+                    </p>
+                </div>
             </div>
-          </section>
-          <!-- Three -->
-          <section id="one"
-                   class="main">
+        </section>
+        <section id="one" class="main">
             <div class="inner spotlight alt style1">
-              <div class="content">
-                <header>
-                  <a href="">
-                    <h2>Flocking</h2>
-                  </a>
-                </header>
-                <p>
-                  This... </p>
-                <center>
-                  <a href="graphics/flocking.html"><img src="graphics/images/flock.gif"><br><a
-                       href="graphics/flocking.html"
-                       class="button special">Open</a></a>
-                  <details>
-                    <summary>
-                      View Code
-                      <span class="icon">👇</span>
-                    </summary>
-                    <script src="https://gist.github.com/LukeHouge/0d5de0a4521cd86af9f372edc3ce7c6e.js"></script>
-                  </details>
-                </center>
-
-                </p>
-              </div>
+                <div class="content">
+                    <header>
+                        <a href="">
+                            <h2>Snowman</h2></a>
+                    </header>
+                    <p> This ... </p>
+                    <center>
+                        <a href="graphics/snowman.html"><img src="graphics/images/snowman.gif"> <br><a href="graphics/snowman.html"
+                                                                                                       class="button special">Open</a></a>
+                        <details>
+                            <summary> View Code <span class="icon">👇</span></summary>
+                            <script src="https://gist.github.com/LukeHouge/71d8298d3cd04fbd78aa74fc60585cb1.js"></script>
+                    </center>
+                    </p>
+                </div>
             </div>
-          </section>
-        </div>
-      </section>
-      <!-- Three -->
-      <section id="one"
-               class="main">
-        <div class="inner spotlight alt style1">
-          <div class="content">
-            <header>
-              <a href="">
-                <h2>Guitar</h2>
-              </a>
-            </header>
-            <p>
-              This is a canvas drawing I made of a guitar to learn the concepts behind bezier curves, and show my love
-              for music and great guitar solos! </p>
-            <center>
-              <canvas id="canvas11"
-                      height="1200"
-                      width="600"
-                      style="border: 1px solid blue"></canvas>
-
-              <script src="graphics/guitar.js"
-                      type="module"
-                      defer></script>
-              <details>
-                <summary>
-                  View Code
-                  <span class="icon">👇</span>
-                </summary>
-                <script src="https://gist.github.com/LukeHouge/83a65e16a614a6a625714eec55370ede.js"></script>
-              </details>
-            </center>
-
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- Three -->
-      <section id="one"
-               class="main">
-        <div class="inner spotlight alt style1">
-          <div class="content">
-            <header>
-              <a href="">
-                <h2>Train</h2>
-              </a>
-            </header>
-            <p>
-              This ... </p>
-            <center>
-              <a href="graphics/train.html"><img src="graphics/images/train.gif"><br><a href="graphics/train.html"
-                   class="button special">Open</a></a>
-              <details>
-                <summary>
-                  View Code
-                  <span class="icon">👇</span>
-                </summary>
-                <script src="https://gist.github.com/LukeHouge/d0ab8d9412e79302528230c74cbb8e7a.js"></script>
-              </details>
-            </center>
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="one"
-               class="main">
-        <div class="inner spotlight alt style1">
-          <div class="content">
-            <header>
-              <a href="">
-                <h2>Snowman</h2>
-              </a>
-            </header>
-            <p>
-              This ... </p>
-            <center>
-              <a href="graphics/snowman.html"><img src="graphics/images/snowman.gif"><br><a href="graphics/snowman.html"
-                   class="button special">Open</a></a>
-              <details>
-                <summary>
-                  View Code
-                  <span class="icon">👇</span>
-                </summary>
-                <script src="https://gist.github.com/LukeHouge/71d8298d3cd04fbd78aa74fc60585cb1.js"></script>
-            </center>
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="one"
-               class="main">
-        <div class="inner spotlight alt style1">
-          <div class="content">
-            <header>
-              <a href="">
-                <h2>3D Copter</h2>
-              </a>
-            </header>
-            <p>
-              This ... </p>
-            <center>
-              <a href="graphics/3dcopter.html"><img src="graphics/images/3d-copter.gif"><br><a
-                   href="graphics/3dcopter.html"
-                   class="button special">Open</a></a>
-              <details>
-                <summary>
-                  View Code
-                  <span class="icon">👇</span>
-                </summary>
-                <script src="https://gist.github.com/LukeHouge/792025e596487841e66f6750d213dfce.js"></script>
-                </p>
-          </div>
-        </div>
-      </section>
-      <section id="one"
-               class="main">
-        <div class="inner spotlight alt style1">
-          <div class="content">
-            <header>
-              <a href="">
-                <h2>Graphics Town</h2>
-              </a>
-            </header>
-            <p>
-              This ... </p>
-            <center>
-              <a href="graphics/12-grtown.html"><img src="graphics/images/town.gif"><br><a
-                   href="graphics/12-grtown.html"
-                   class="button special">Open</a></a>
-              <a href="https://github.com/LukeHouge/wb12/tree/main/for_students"
-                 class="button special">View Code</a></a>
-
-            </center>
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+        <section id="one" class="main">
+            <div class="inner spotlight alt style1">
+                <div class="content">
+                    <header>
+                        <a href="">
+                            <h2>3D Copter</h2></a>
+                    </header>
+                    <p> This ... </p>
+                    <center>
+                        <a href="graphics/3dcopter.html"><img src="graphics/images/3d-copter.gif"> <br><a href="graphics/3dcopter.html"
+                                                                                                          class="button special">Open</a></a>
+                        <details>
+                            <summary> View Code <span class="icon">👇</span></summary>
+                            <script src="https://gist.github.com/LukeHouge/792025e596487841e66f6750d213dfce.js"></script>
+                            </p>
+                </div>
+            </div>
+        </section>
+        <section id="one" class="main">
+            <div class="inner spotlight alt style1">
+                <div class="content">
+                    <header>
+                        <a href="">
+                            <h2>Graphics Town</h2></a>
+                    </header>
+                    <p> This ... </p>
+                    <center>
+                        <a href="graphics/12-grtown.html"><img src="graphics/images/town.gif"> <br><a href="graphics/12-grtown.html"
+                                                                                                      class="button special">Open</a></a> <a
+                            href="https://github.com/LukeHouge/wb12/tree/main/for_students" class="button special">View Code</a></a>
+                    </center>
+                    </p>
+                </div>
+            </div>
+        </section>
     </div>
-
     <!-- Footer -->
     <footer id="footer">
-      <div class="inner">
-        <ul class="icons">
-          <li>
-            <a href="http://www.captureminnesota.com/users/lukehouge?page=1"
-               class="icon alt fa-instagram"><span class="label">Capture MN</span></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/lukehouge/"
-               class="icon alt fa-linkedin"><span class="label">Linkedin</span></a>
-          </li>
-          <li>
-            <a href="https://github.com/LukeHouge"
-               class="icon alt fa-github"><span class="label">GitHub</span></a>
-          </li>
-        </ul>
-      </div>
-      <p class="copyright">&copy; Luke Houge 2021. All rights reserved.</p>
+        <div class="inner">
+            <ul class="icons">
+
+                <li><a href="https://www.linkedin.com/in/lukehouge/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+                <li><a href="https://github.com/LukeHouge" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </div>
+        <p class="copyright">&copy; Luke Houge 2021. All rights reserved.</p>
     </footer>
-  </div>
-
-  <!-- Scripts -->
-  <script src="../portfolio/assets/js/jquery.min.js"></script>
-  <script src="../portfolio/assets/js/jquery.scrolly.min.js"></script>
-  <script src="../portfolio/assets/js/jquery.scrollex.min.js"></script>
-  <script src="../portfolio/assets/js/skel.min.js"></script>
-  <script src="../portfolio/assets/js/util.js"></script>
-  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  <script src="../portfolio/assets/js/main.js"></script>
-  <script src="../portfolio/assets/js/classie.js"></script>
-  <script src="../portfolio/assets/js/dummydata.js"></script>
-  <script src="../portfolio/assets/js/menu.js"></script>
-  <script>
+</div>
+<!-- Scripts -->
+<script src="../portfolio/assets/js/jquery.min.js"></script>
+<script src="../portfolio/assets/js/jquery.scrolly.min.js"></script>
+<script src="../portfolio/assets/js/jquery.scrollex.min.js"></script>
+<script src="../portfolio/assets/js/skel.min.js"></script>
+<script src="../portfolio/assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../portfolio/assets/js/main.js"></script>
+<script src="../portfolio/assets/js/classie.js"></script>
+<script src="../portfolio/assets/js/dummydata.js"></script>
+<script src="../portfolio/assets/js/menu.js"></script>
+<script>
     (function () {
-      var menuEl = document.getElementById("ml-menu"),
-        mlmenu = new MLMenu(menuEl, {
-          // breadcrumbsCtrl : true, // show breadcrumbs
-          // initialBreadcrumb : 'all', // initial breadcrumb text
-          backCtrl: false, // show back button
-          // itemsDelayInterval : 60, // delay between each menu item sliding animation
-          onItemClick: loadDummyData, // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
-        });
+        var menuEl = document.getElementById("ml-menu"),
+                mlmenu = new MLMenu(menuEl, {
+                    // breadcrumbsCtrl : true, // show breadcrumbs
+                    // initialBreadcrumb : 'all', // initial breadcrumb text
+                    backCtrl: false, // show back button
+                    // itemsDelayInterval : 60, // delay between each menu item sliding animation
+                    onItemClick: loadDummyData, // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+                });
+        // mobile menu toggle
+        var openMenuCtrl = document.querySelector(".action--open"),
+                closeMenuCtrl = document.querySelector(".action--close");
+        openMenuCtrl.addEventListener("click", openMenu);
+        closeMenuCtrl.addEventListener("click", closeMenu);
 
-      // mobile menu toggle
-      var openMenuCtrl = document.querySelector(".action--open"),
-        closeMenuCtrl = document.querySelector(".action--close");
+        function openMenu() {
+            classie.add(menuEl, "menu--open");
+            closeMenuCtrl.focus();
+        }
 
-      openMenuCtrl.addEventListener("click", openMenu);
-      closeMenuCtrl.addEventListener("click", closeMenu);
+        function closeMenu() {
+            classie.remove(menuEl, "menu--open");
+            openMenuCtrl.focus();
+        }
 
-      function openMenu() {
-        classie.add(menuEl, "menu--open");
-        closeMenuCtrl.focus();
-      }
+        // simulate grid content loading
+        var gridWrapper = document.querySelector(".content");
 
-      function closeMenu() {
-        classie.remove(menuEl, "menu--open");
-        openMenuCtrl.focus();
-      }
-
-      // simulate grid content loading
-      var gridWrapper = document.querySelector(".content");
-
-      function loadDummyData(ev, itemName) {
-        ev.preventDefault();
-
-        closeMenu();
-        gridWrapper.innerHTML = "";
-        classie.add(gridWrapper, "content--loading");
-        setTimeout(function () {
-          classie.remove(gridWrapper, "content--loading");
-          gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + "<ul>";
-        }, 700);
-      }
+        function loadDummyData(ev, itemName) {
+            ev.preventDefault();
+            closeMenu();
+            gridWrapper.innerHTML = "";
+            classie.add(gridWrapper, "content--loading");
+            setTimeout(function () {
+                classie.remove(gridWrapper, "content--loading");
+                gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + "<ul>";
+            }, 700);
+        }
     })();
-  </script>
+</script>
 </body>
 
 </html>

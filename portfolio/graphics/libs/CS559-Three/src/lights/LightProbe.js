@@ -1,51 +1,41 @@
-import { SphericalHarmonics3 } from '../math/SphericalHarmonics3.js';
-import { Light } from './Light.js';
+import { SphericalHarmonics3 } from "../math/SphericalHarmonics3.js";
+import { Light } from "./Light.js";
 
-function LightProbe( sh, intensity ) {
+function LightProbe(sh, intensity) {
+  Light.call(this, undefined, intensity);
 
-	Light.call( this, undefined, intensity );
+  this.type = "LightProbe";
 
-	this.type = 'LightProbe';
-
-	this.sh = ( sh !== undefined ) ? sh : new SphericalHarmonics3();
-
+  this.sh = sh !== undefined ? sh : new SphericalHarmonics3();
 }
 
-LightProbe.prototype = Object.assign( Object.create( Light.prototype ), {
+LightProbe.prototype = Object.assign(Object.create(Light.prototype), {
+  constructor: LightProbe,
 
-	constructor: LightProbe,
+  isLightProbe: true,
 
-	isLightProbe: true,
+  copy: function (source) {
+    Light.prototype.copy.call(this, source);
 
-	copy: function ( source ) {
+    this.sh.copy(source.sh);
 
-		Light.prototype.copy.call( this, source );
+    return this;
+  },
 
-		this.sh.copy( source.sh );
+  fromJSON: function (json) {
+    this.intensity = json.intensity; // TODO: Move this bit to Light.fromJSON();
+    this.sh.fromArray(json.sh);
 
-		return this;
+    return this;
+  },
 
-	},
+  toJSON: function (meta) {
+    const data = Light.prototype.toJSON.call(this, meta);
 
-	fromJSON: function ( json ) {
+    data.object.sh = this.sh.toArray();
 
-		this.intensity = json.intensity; // TODO: Move this bit to Light.fromJSON();
-		this.sh.fromArray( json.sh );
-
-		return this;
-
-	},
-
-	toJSON: function ( meta ) {
-
-		const data = Light.prototype.toJSON.call( this, meta );
-
-		data.object.sh = this.sh.toArray();
-
-		return data;
-
-	}
-
-} );
+    return data;
+  },
+});
 
 export { LightProbe };

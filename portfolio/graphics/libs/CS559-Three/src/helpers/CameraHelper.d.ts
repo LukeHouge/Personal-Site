@@ -1,18 +1,16 @@
-import { Camera } from './../cameras/Camera';
-import { LineSegments } from './../objects/LineSegments';
+import { Camera } from "./../cameras/Camera";
+import { LineSegments } from "./../objects/LineSegments";
 
 export class CameraHelper extends LineSegments {
+  constructor(camera: Camera);
 
-	constructor( camera: Camera );
+  camera: Camera;
+  pointMap: { [id: string]: number[] };
 
-	camera: Camera;
-	pointMap: { [id: string]: number[] };
+  /**
+   * @default 'CameraHelper'
+   */
+  type: string;
 
-	/**
-	 * @default 'CameraHelper'
-	 */
-	type: string;
-
-	update(): void;
-
+  update(): void;
 }

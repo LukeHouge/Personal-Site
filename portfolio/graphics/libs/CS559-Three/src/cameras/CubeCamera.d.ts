@@ -1,16 +1,14 @@
-import { WebGLCubeRenderTarget } from './../renderers/WebGLCubeRenderTarget';
-import { Scene } from './../scenes/Scene';
-import { WebGLRenderer } from './../renderers/WebGLRenderer';
-import { Object3D } from './../core/Object3D';
+import { WebGLCubeRenderTarget } from "./../renderers/WebGLCubeRenderTarget";
+import { Scene } from "./../scenes/Scene";
+import { WebGLRenderer } from "./../renderers/WebGLRenderer";
+import { Object3D } from "./../core/Object3D";
 
 export class CubeCamera extends Object3D {
+  constructor(near: number, far: number, renderTarget: WebGLCubeRenderTarget);
 
-	constructor( near: number, far: number, renderTarget: WebGLCubeRenderTarget );
+  type: "CubeCamera";
 
-	type: 'CubeCamera';
+  renderTarget: WebGLCubeRenderTarget;
 
-	renderTarget: WebGLCubeRenderTarget;
-
-	update( renderer: WebGLRenderer, scene: Scene ): void;
-
+  update(renderer: WebGLRenderer, scene: Scene): void;
 }

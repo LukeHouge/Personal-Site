@@ -1,22 +1,20 @@
 import {
-	WebGLRenderTarget,
-	WebGLRenderTargetOptions,
-} from './WebGLRenderTarget';
+  WebGLRenderTarget,
+  WebGLRenderTargetOptions,
+} from "./WebGLRenderTarget";
 
 export class WebGLMultisampleRenderTarget extends WebGLRenderTarget {
+  constructor(
+    width: number,
+    height: number,
+    options?: WebGLRenderTargetOptions
+  );
 
-	constructor(
-		width: number,
-		height: number,
-		options?: WebGLRenderTargetOptions
-	);
+  readonly isWebGLMultisampleRenderTarget: true;
 
-	readonly isWebGLMultisampleRenderTarget: true;
-
-	/**
-	 * Specifies the number of samples to be used for the renderbuffer storage.However, the maximum supported size for multisampling is platform dependent and defined via gl.MAX_SAMPLES.
-	 * @default 4
-	 */
-	samples: number;
-
+  /**
+   * Specifies the number of samples to be used for the renderbuffer storage.However, the maximum supported size for multisampling is platform dependent and defined via gl.MAX_SAMPLES.
+   * @default 4
+   */
+  samples: number;
 }

@@ -5,8 +5,8 @@
  * CS559 3D World Framework Code
  *
  * Simple, automatic UI from an object with properly declared parameters
- * 
- * @module AutoUI 
+ *
+ * @module AutoUI
  * */
 
 // we need to have the BaseClass definition
@@ -18,17 +18,17 @@ import * as InputHelpers from "../CS559/inputHelpers.js";
  * This is a "global" variable - if panels are placed without a where,
  * we make a DIV (the "panel panel") and put them in there - this way
  * we can get floating
- * 
+ *
  * @type{HTMLElement}
  */
 let panelPanel;
 // since exports are read only, always access it by a function that will make it
 export function panel() {
-    if (!panelPanel) {
-        panelPanel = InputHelpers.makeFlexDiv();
-        panelPanel.id = "panel-panel";
-    }
-    return panelPanel;
+  if (!panelPanel) {
+    panelPanel = InputHelpers.makeFlexDiv();
+    panelPanel.id = "panel-panel";
+  }
+  return panelPanel;
 }
 
 export class AutoUI {
@@ -48,39 +48,42 @@ export class AutoUI {
    * @param {number} [width=300]
    * @param {InputHelpers.WhereSpec} [where] - where to place the panel in the DOM (at the end of the page by default)
    */
-  constructor(object, width = 300, where = undefined, widthdiv=1) {
+  constructor(object, width = 300, where = undefined, widthdiv = 1) {
     let self = this;
     this.object = object;
 
     /* if no where is provided, put it at the end of the panel panel - assuming there is one */
     if (!where) {
-        where=panel();
+      where = panel();
     }
 
-    this.div = InputHelpers.makeBoxDiv({ width: width, flex: widthdiv>1 }, where);
+    this.div = InputHelpers.makeBoxDiv(
+      { width: width, flex: widthdiv > 1 },
+      where
+    );
     InputHelpers.makeHead(object.name, this.div, { tight: true });
-    if (widthdiv>1) InputHelpers.makeFlexBreak(this.div);
-    this.sliders = object.params.map(function(param) {
+    if (widthdiv > 1) InputHelpers.makeFlexBreak(this.div);
+    this.sliders = object.params.map(function (param) {
       let slider = new InputHelpers.LabelSlider(param.name, {
         where: self.div,
-        width: (width / widthdiv) - 20,
+        width: width / widthdiv - 20,
         min: param.min,
         max: param.max,
-        step: param.step ? param.step : ((param.max - param.min) / 30),
+        step: param.step ? param.step : (param.max - param.min) / 30,
         initial: param.initial,
-        id: object.name + "-" + param.name
+        id: object.name + "-" + param.name,
       });
       return slider;
     });
-    this.sliders.forEach(function(sl) {
-      sl.oninput = function() {
+    this.sliders.forEach(function (sl) {
+      sl.oninput = function () {
         self.update();
       };
     });
     this.update();
   }
   update() {
-    let vals = this.sliders.map(sl => Number(sl.value()));
+    let vals = this.sliders.map((sl) => Number(sl.value()));
     this.object.update(vals);
   }
 
@@ -103,5 +106,3 @@ export class AutoUI {
     }
   }
 }
-
-

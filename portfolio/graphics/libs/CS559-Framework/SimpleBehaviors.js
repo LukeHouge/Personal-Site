@@ -15,15 +15,15 @@ import * as T from "../CS559-Three/build/three.module.js";
 import { GrObject } from "./GrObject.js";
 /**
  * Simple spinning behavior as an example of how to create behaviors as functions
- * 
+ *
  * @param {GrObject} grobj
  * @param {number} [speed]
  */
 export function spinY(grobj, speed) {
   let newSpeed = speed ? speed : 0.001;
   let oldStep = grobj.stepWorld;
-  grobj.stepWorld = function(delta, timeOfDay) {
-    this.objects.forEach(obj => obj.rotateY(newSpeed * delta));
+  grobj.stepWorld = function (delta, timeOfDay) {
+    this.objects.forEach((obj) => obj.rotateY(newSpeed * delta));
     oldStep.call(this, delta, timeOfDay);
   };
   return grobj;

@@ -1,29 +1,27 @@
 export class ObjectManipulator {
+  constructor();
 
-	constructor();
-
-	applyProperties( objToAlter: object, params: object, forceCreation: boolean ): void;
-
+  applyProperties(
+    objToAlter: object,
+    params: object,
+    forceCreation: boolean
+  ): void;
 }
 
 export class DefaultWorkerPayloadHandler {
+  constructor(parser: object);
+  logging: {
+    enabled: boolean;
+    debug: boolean;
+  };
+  parser: object;
 
-	constructor( parser: object );
-	logging: {
-		enabled: boolean;
-		debug: boolean;
-	};
-	parser: object;
-
-	handlePayload( payload: object ): void;
-
+  handlePayload(payload: object): void;
 }
 
 export class WorkerRunner {
+  constructor(payloadHandler: object);
+  payloadHandler: object;
 
-	constructor( payloadHandler: object );
-	payloadHandler: object;
-
-	processMessage( payload: object ): void;
-
+  processMessage(payload: object): void;
 }

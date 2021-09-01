@@ -1,25 +1,23 @@
-import { PerspectiveCamera } from './PerspectiveCamera';
-import { Camera } from './Camera';
+import { PerspectiveCamera } from "./PerspectiveCamera";
+import { Camera } from "./Camera";
 
 export class StereoCamera extends Camera {
+  constructor();
 
-	constructor();
+  type: "StereoCamera";
 
-	type: 'StereoCamera';
+  /**
+   * @default 1
+   */
+  aspect: number;
 
-	/**
-	 * @default 1
-	 */
-	aspect: number;
+  /**
+   * @default 0.064
+   */
+  eyeSep: number;
 
-	/**
-	 * @default 0.064
-	 */
-	eyeSep: number;
+  cameraL: PerspectiveCamera;
+  cameraR: PerspectiveCamera;
 
-	cameraL: PerspectiveCamera;
-	cameraR: PerspectiveCamera;
-
-	update( camera: PerspectiveCamera ): void;
-
+  update(camera: PerspectiveCamera): void;
 }

@@ -1,21 +1,19 @@
-import { BufferGeometry } from '../core/BufferGeometry';
-import { Geometry } from '../core/Geometry';
+import { BufferGeometry } from "../core/BufferGeometry";
+import { Geometry } from "../core/Geometry";
 
 export class EdgesGeometry extends BufferGeometry {
+  /**
+   * @param geometry
+   * @param [thresholdAngle=1]
+   */
+  constructor(geometry: BufferGeometry | Geometry, thresholdAngle?: number);
 
-	/**
-	 * @param geometry
-	 * @param [thresholdAngle=1]
-	 */
-	constructor( geometry: BufferGeometry | Geometry, thresholdAngle?: number );
+  /**
+   * @default 'EdgesGeometry'
+   */
+  type: string;
 
-	/**
-	 * @default 'EdgesGeometry'
-	 */
-	type: string;
-
-	parameters: {
-		thresholdAngle: number;
-	};
-
+  parameters: {
+    thresholdAngle: number;
+  };
 }

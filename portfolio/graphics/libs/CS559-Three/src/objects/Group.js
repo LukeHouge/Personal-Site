@@ -1,20 +1,15 @@
-import { Object3D } from '../core/Object3D.js';
+import { Object3D } from "../core/Object3D.js";
 
 function Group() {
+  Object3D.call(this);
 
-	Object3D.call( this );
-
-	this.type = 'Group';
-
+  this.type = "Group";
 }
 
-Group.prototype = Object.assign( Object.create( Object3D.prototype ), {
+Group.prototype = Object.assign(Object.create(Object3D.prototype), {
+  constructor: Group,
 
-	constructor: Group,
-
-	isGroup: true
-
-} );
-
+  isGroup: true,
+});
 
 export { Group };

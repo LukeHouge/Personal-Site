@@ -527,7 +527,8 @@ export class GrTruckCrane extends GrObject {
     this.whole_ob.position.z = paramValues[1];
     this.whole_ob.rotation.y = degreesToRadians(paramValues[2]);
     if (lastVal != paramValues[3]) {
-      if (lastVal > paramValues[3]) this.innerArm.translateX(-(paramValues[3] - lastVal));
+      if (lastVal > paramValues[3])
+        this.innerArm.translateX(-(paramValues[3] - lastVal));
       else this.innerArm.translateX(lastVal - paramValues[3]);
     }
     lastVal = paramValues[3];
@@ -728,7 +729,10 @@ export class GrBackhoe extends GrObject {
     front_bucket_curve.lineTo(0.05, -0.2);
     front_bucket_curve.lineTo(0.5, -0.7);
     front_bucket_curve.lineTo(-0.25, -0.9);
-    let front_bucket_geom = new T.ExtrudeGeometry(front_bucket_curve, exSettings2);
+    let front_bucket_geom = new T.ExtrudeGeometry(
+      front_bucket_curve,
+      exSettings2
+    );
     let front_bucket = new T.Mesh(front_bucket_geom, arm_mat);
     front_bucket_group.add(front_bucket);
     front_bucket.translateZ(-2);

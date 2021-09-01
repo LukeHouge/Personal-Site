@@ -1,5 +1,3 @@
 export namespace DataUtils {
-
-	export function toHalfFloat( val: number ): number;
-
+  export function toHalfFloat(val: number): number;
 }

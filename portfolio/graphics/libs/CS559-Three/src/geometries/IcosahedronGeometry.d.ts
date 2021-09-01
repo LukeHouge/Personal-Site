@@ -1,16 +1,14 @@
-import { Geometry } from './../core/Geometry';
+import { Geometry } from "./../core/Geometry";
 
 export class IcosahedronGeometry extends Geometry {
+  /**
+   * @param [radius=1]
+   * @param [detail=0]
+   */
+  constructor(radius?: number, detail?: number);
 
-	/**
-	 * @param [radius=1]
-	 * @param [detail=0]
-	 */
-	constructor( radius?: number, detail?: number );
-
-	/**
-	 * @default 'IcosahedronGeometry'
-	 */
-	type: string;
-
+  /**
+   * @default 'IcosahedronGeometry'
+   */
+  type: string;
 }

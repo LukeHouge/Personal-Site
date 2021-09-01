@@ -45,7 +45,11 @@ export class CircularTrack extends GrObject {
   }
   eval(u) {
     let p = u * 2 * Math.PI;
-    return [this.x + this.r * Math.cos(p), this.y, this.z + this.r * Math.sin(p)];
+    return [
+      this.x + this.r * Math.cos(p),
+      this.y,
+      this.z + this.r * Math.sin(p),
+    ];
   }
   tangent(u) {
     let p = u * 2 * Math.PI;

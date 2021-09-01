@@ -20,64 +20,51 @@
  * }
  */
 
-import { Geometry } from '../core/Geometry.js';
-import { ExtrudeBufferGeometry } from './ExtrudeBufferGeometry.js';
+import { Geometry } from "../core/Geometry.js";
+import { ExtrudeBufferGeometry } from "./ExtrudeBufferGeometry.js";
 
 class ExtrudeGeometry extends Geometry {
+  constructor(shapes, options) {
+    super();
 
-	constructor( shapes, options ) {
+    this.type = "ExtrudeGeometry";
 
-		super();
+    this.parameters = {
+      shapes: shapes,
+      options: options,
+    };
 
-		this.type = 'ExtrudeGeometry';
+    this.fromBufferGeometry(new ExtrudeBufferGeometry(shapes, options));
+    this.mergeVertices();
+  }
 
-		this.parameters = {
-			shapes: shapes,
-			options: options
-		};
+  toJSON() {
+    const data = super.toJSON();
 
-		this.fromBufferGeometry( new ExtrudeBufferGeometry( shapes, options ) );
-		this.mergeVertices();
+    const shapes = this.parameters.shapes;
+    const options = this.parameters.options;
 
-	}
-
-	toJSON() {
-
-		const data = super.toJSON();
-
-		const shapes = this.parameters.shapes;
-		const options = this.parameters.options;
-
-		return toJSON( shapes, options, data );
-
-	}
-
+    return toJSON(shapes, options, data);
+  }
 }
 
-function toJSON( shapes, options, data ) {
+function toJSON(shapes, options, data) {
+  data.shapes = [];
 
-	data.shapes = [];
+  if (Array.isArray(shapes)) {
+    for (let i = 0, l = shapes.length; i < l; i++) {
+      const shape = shapes[i];
 
-	if ( Array.isArray( shapes ) ) {
+      data.shapes.push(shape.uuid);
+    }
+  } else {
+    data.shapes.push(shapes.uuid);
+  }
 
-		for ( let i = 0, l = shapes.length; i < l; i ++ ) {
+  if (options.extrudePath !== undefined)
+    data.options.extrudePath = options.extrudePath.toJSON();
 
-			const shape = shapes[ i ];
-
-			data.shapes.push( shape.uuid );
-
-		}
-
-	} else {
-
-		data.shapes.push( shapes.uuid );
-
-	}
-
-	if ( options.extrudePath !== undefined ) data.options.extrudePath = options.extrudePath.toJSON();
-
-	return data;
-
+  return data;
 }
 
 export { ExtrudeGeometry };

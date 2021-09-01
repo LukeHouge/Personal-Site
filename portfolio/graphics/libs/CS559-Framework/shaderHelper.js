@@ -15,7 +15,7 @@
  *
  * There are potentially issues if the fragment shader
  * ends up getting compiled before the vertex shader.
- * 
+ *
  * @module shaderHelper
  */
 
@@ -52,12 +52,12 @@ function loadFragmentShader(url, material) {
   let loader = new T.FileLoader();
   loader.load(
     url,
-    /* onload = */ function(data) {
+    /* onload = */ function (data) {
       material.fragmentShader = data.toString();
       material.needsUpdate = true;
     },
-    /* onprogress = */ function(xhr) {},
-    /* onerror = */ function(err) {
+    /* onprogress = */ function (xhr) {},
+    /* onerror = */ function (err) {
       console.log(`Failed to Load Shader (file:${url})`);
       console.log(`Error: ${err}`);
       material.fragmentShader = errorFragmentShader;
@@ -75,12 +75,12 @@ function loadVertexShader(url, material) {
   let loader = new T.FileLoader();
   loader.load(
     url,
-    /* onload = */ function(data) {
+    /* onload = */ function (data) {
       material.vertexShader = data.toString();
       material.needsUpdate = true;
     },
-    /* onprogress = */ function(xhr) {},
-    /* onerror = */ function(err) {
+    /* onprogress = */ function (xhr) {},
+    /* onerror = */ function (err) {
       console.log(`Failed to Load Shader (file:${url})`);
       console.log(`Error: ${err}`);
       material.fragmentShader = errorFragmentShader;

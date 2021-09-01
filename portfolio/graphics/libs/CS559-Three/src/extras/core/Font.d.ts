@@ -1,16 +1,14 @@
-import { Shape } from './Shape';
+import { Shape } from "./Shape";
 
 export class Font {
+  constructor(jsondata: any);
 
-	constructor( jsondata: any );
+  /**
+   * @default 'Font'
+   */
+  type: string;
 
-	/**
-	 * @default 'Font'
-	 */
-	type: string;
+  data: string;
 
-	data: string;
-
-	generateShapes( text: string, size: number ): Shape[];
-
+  generateShapes(text: string, size: number): Shape[];
 }

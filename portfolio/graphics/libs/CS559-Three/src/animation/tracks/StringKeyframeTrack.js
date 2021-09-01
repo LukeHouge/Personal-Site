@@ -1,29 +1,28 @@
-import { InterpolateDiscrete } from '../../constants.js';
-import { KeyframeTrack } from '../KeyframeTrack.js';
+import { InterpolateDiscrete } from "../../constants.js";
+import { KeyframeTrack } from "../KeyframeTrack.js";
 
 /**
  * A Track that interpolates Strings
  */
 
-function StringKeyframeTrack( name, times, values, interpolation ) {
-
-	KeyframeTrack.call( this, name, times, values, interpolation );
-
+function StringKeyframeTrack(name, times, values, interpolation) {
+  KeyframeTrack.call(this, name, times, values, interpolation);
 }
 
-StringKeyframeTrack.prototype = Object.assign( Object.create( KeyframeTrack.prototype ), {
+StringKeyframeTrack.prototype = Object.assign(
+  Object.create(KeyframeTrack.prototype),
+  {
+    constructor: StringKeyframeTrack,
 
-	constructor: StringKeyframeTrack,
+    ValueTypeName: "string",
+    ValueBufferType: Array,
 
-	ValueTypeName: 'string',
-	ValueBufferType: Array,
+    DefaultInterpolation: InterpolateDiscrete,
 
-	DefaultInterpolation: InterpolateDiscrete,
+    InterpolantFactoryMethodLinear: undefined,
 
-	InterpolantFactoryMethodLinear: undefined,
-
-	InterpolantFactoryMethodSmooth: undefined
-
-} );
+    InterpolantFactoryMethodSmooth: undefined,
+  }
+);
 
 export { StringKeyframeTrack };

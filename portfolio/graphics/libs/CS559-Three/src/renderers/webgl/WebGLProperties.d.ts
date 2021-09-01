@@ -1,10 +1,8 @@
 export class WebGLProperties {
+  constructor();
 
-	constructor();
-
-	get( object: any ): any;
-	remove( object: any ): void;
-	update( object: any, key: any, value: any ): any;
-	dispose(): void;
-
+  get(object: any): any;
+  remove(object: any): void;
+  update(object: any, key: any, value: any): any;
+  dispose(): void;
 }

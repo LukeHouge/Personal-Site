@@ -1,19 +1,22 @@
 import {
-	CubeTexture,
-	Loader,
-	LoadingManager,
-	TextureDataType
-} from '../../../src/Three';
+  CubeTexture,
+  Loader,
+  LoadingManager,
+  TextureDataType,
+} from "../../../src/Three";
 
-import { RGBELoader } from './RGBELoader';
+import { RGBELoader } from "./RGBELoader";
 
 export class HDRCubeTextureLoader extends Loader {
+  constructor(manager?: LoadingManager);
+  hdrLoader: RGBELoader;
+  type: TextureDataType;
 
-	constructor( manager?: LoadingManager );
-	hdrLoader: RGBELoader;
-	type: TextureDataType;
-
-	load( urls: string[], onLoad: ( texture: CubeTexture ) => void, onProgress?: ( event: ProgressEvent ) => void, onError?: ( event: ErrorEvent ) => void ): void;
-	setDataType( type: TextureDataType ): this;
-
+  load(
+    urls: string[],
+    onLoad: (texture: CubeTexture) => void,
+    onProgress?: (event: ProgressEvent) => void,
+    onError?: (event: ErrorEvent) => void
+  ): void;
+  setDataType(type: TextureDataType): this;
 }

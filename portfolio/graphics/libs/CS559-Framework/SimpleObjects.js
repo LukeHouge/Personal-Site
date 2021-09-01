@@ -98,18 +98,22 @@ export class GrSphere extends GrObject {
     mesh.position.x = params.x ? Number(params.x) : 0;
     mesh.position.y = params.y ? Number(params.y) : 0;
     mesh.position.z = params.z ? Number(params.z) : 0;
-    
+
     this.mesh = mesh;
   }
-  
+
   /**
    * Update the geometry of the sphere to change its level of complexity
-   * 
+   *
    * @param {number} [widthSegments] - number of horizontal segments
    * @param {number} [heightSegments] - number of vertical segments
    */
   setSegmentation(widthSegments, heightSegments) {
-    this.mesh.geometry = new T.SphereBufferGeometry(this.mesh.geometry.parameters.radius, widthSegments, heightSegments);
+    this.mesh.geometry = new T.SphereBufferGeometry(
+      this.mesh.geometry.parameters.radius,
+      widthSegments,
+      heightSegments
+    );
   }
 }
 
@@ -147,8 +151,8 @@ export class GrSquareSign extends GrObject {
     geom.faceVertexUvs = [
       [
         [uv0, uv1, uv2],
-        [uv1, uv3, uv2]
-      ]
+        [uv1, uv3, uv2],
+      ],
     ];
     let material;
     if (params.material) {
@@ -244,39 +248,41 @@ export class GrGroup extends GrObject {
 }
 
 export class GrCylinder extends GrObject {
-    /**
-     * 
-     * @param {*} params 
-     * @param {Array<string|Array>} [paramInfo]
-     */
-    constructor(params, paramInfo) {
-        let material;
-        if (params.material) {
-            material = params.material;
-        } else if (params.color) {
-            material = new T.MeshStandardMaterial( {color:params.color} );
-        } else {
-            material = new T.MeshStandardMaterial( {color: "#FF8888"});
-        }
-        let rad = params.radius ? params.radius : 1;
-        let rtop = ("top" in params) ? params.top : rad;
-        let rbottom = ("bottom" in params) ? params.bottom : rad;
-        let height = params.height ? params.height : 1.0;
-        let geom = new T.CylinderBufferGeometry(rtop, rbottom, height,
-            params.widthSegments ? params.widthSegments : 8,
-            params.heightSegments ? params.heightSegments : 6
-        );
-        
-        let mesh = new T.Mesh(geom, material);
-        // note that we have to make the Object3D before we can call
-        // super and we have to call super before we can use this
-
-        super(`Sphere-${simpleObjectCounter++}`,mesh,paramInfo);
-
-        // put the object in its place
-        mesh.position.x = params.x ? Number(params.x) : 0;
-        mesh.position.y = params.y ? Number(params.y) : 0;
-        mesh.position.z = params.z ? Number(params.z) : 0;
+  /**
+   *
+   * @param {*} params
+   * @param {Array<string|Array>} [paramInfo]
+   */
+  constructor(params, paramInfo) {
+    let material;
+    if (params.material) {
+      material = params.material;
+    } else if (params.color) {
+      material = new T.MeshStandardMaterial({ color: params.color });
+    } else {
+      material = new T.MeshStandardMaterial({ color: "#FF8888" });
     }
-}
+    let rad = params.radius ? params.radius : 1;
+    let rtop = "top" in params ? params.top : rad;
+    let rbottom = "bottom" in params ? params.bottom : rad;
+    let height = params.height ? params.height : 1.0;
+    let geom = new T.CylinderBufferGeometry(
+      rtop,
+      rbottom,
+      height,
+      params.widthSegments ? params.widthSegments : 8,
+      params.heightSegments ? params.heightSegments : 6
+    );
 
+    let mesh = new T.Mesh(geom, material);
+    // note that we have to make the Object3D before we can call
+    // super and we have to call super before we can use this
+
+    super(`Sphere-${simpleObjectCounter++}`, mesh, paramInfo);
+
+    // put the object in its place
+    mesh.position.x = params.x ? Number(params.x) : 0;
+    mesh.position.y = params.y ? Number(params.y) : 0;
+    mesh.position.z = params.z ? Number(params.z) : 0;
+  }
+}

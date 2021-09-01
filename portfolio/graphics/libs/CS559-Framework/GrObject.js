@@ -6,8 +6,8 @@
  *
  * GrObject: a "thin wrapper" around Three.JS's Object3D to facilitate
  * creating UIs and doing animation
- * 
- * @module GrObject 
+ *
+ * @module GrObject
  */
 
 /* students will want to create objects that extend this class */
@@ -23,8 +23,8 @@ import * as T from "../CS559-Three/build/three.module.js";
  * This function converts from the specifications given to the `GrObject`
  * constructor into the form used internally. It is the best documentation for
  * how those descriptions are interpreted.
- * 
- * when creating an object, a parameter is defined by an array of up to 
+ *
+ * when creating an object, a parameter is defined by an array of up to
  * 5 things
  * name (string)
  * min (number)
@@ -55,8 +55,8 @@ export function paramObjFromParam(param) {
       paramObj.initial = param[3];
     }
     if (param.length > 4) {
-        paramObj.step = param[4];
-    } 
+      paramObj.step = param[4];
+    }
   }
   // make sure the initial value is legal
   if (paramObj.initial < paramObj.min) {
@@ -69,9 +69,9 @@ export function paramObjFromParam(param) {
   return paramObj;
 }
 
-/** 
+/**
  * @class GrObject
- * 
+ *
  * GrObjects have:
  * - a name - each object should have a unique name (like an id), but this is not
  *   enforced
@@ -92,8 +92,8 @@ export function paramObjFromParam(param) {
  * Note that a `GrObject` does not add itself to the scene (other things take care
  * of that). When the object is added to the world, it's THREE objects are added to
  * the `Scene` (the THREE world container).
- * 
- * 
+ *
+ *
  */
 export class GrObject {
   /**
@@ -133,7 +133,7 @@ export class GrObject {
     if (Array.isArray(objectOrObjects)) {
       // we were given a list - do a deep copy
       let objList = this.objects; // deal with the non-lexical this
-      objectOrObjects.forEach(function(obj) {
+      objectOrObjects.forEach(function (obj) {
         objList.push(obj);
       });
     } else {
@@ -149,7 +149,7 @@ export class GrObject {
     if (paramInfo) {
       // Totally OK to have none
       let self = this;
-      paramInfo.forEach(function(param) {
+      paramInfo.forEach(function (param) {
         // default values for the parameter in case we don't get any
         let paramObj = paramObjFromParam(param);
         self.params.push(paramObj);
@@ -215,29 +215,29 @@ export class GrObject {
   }
 
   /**
-   * helper method - set the scale of the objects 
+   * helper method - set the scale of the objects
    * note: this sets the scale of all the root level objects
    * it doesn't consider what was already there
    * also, it is only a uniform method
-   * 
+   *
    * @param {number} scale=1.0
    * @param {number} sy=0
    * @param {number} sz=0
    */
-  setScale(scale=1.0, sy=0, sz=0) {
-      let syy = sy || scale;
-      let szz = sz || scale;
-      this.objects.forEach(e => e.scale.set(scale,syy,szz));
+  setScale(scale = 1.0, sy = 0, sz = 0) {
+    let syy = sy || scale;
+    let szz = sz || scale;
+    this.objects.forEach((e) => e.scale.set(scale, syy, szz));
   }
 
   /**
    * set the position of each (root level) object
-   * 
-   * @param {number} x 
-   * @param {number} y 
-   * @param {number} z 
+   *
+   * @param {number} x
+   * @param {number} y
+   * @param {number} z
    */
-  setPos(x=0, y=0, z=0) {
-    this.objects.forEach(e => e.position.set(x,y,z));
+  setPos(x = 0, y = 0, z = 0) {
+    this.objects.forEach((e) => e.position.set(x, y, z));
   }
 }

@@ -1,21 +1,19 @@
-import { Geometry } from './../core/Geometry';
+import { Geometry } from "./../core/Geometry";
 
 export class DodecahedronGeometry extends Geometry {
+  /**
+   * @param [radius=1]
+   * @param [detail=0]
+   */
+  constructor(radius?: number, detail?: number);
 
-	/**
-	 * @param [radius=1]
-	 * @param [detail=0]
-	 */
-	constructor( radius?: number, detail?: number );
+  /**
+   * @default 'DodecahedronGeometry'
+   */
+  type: string;
 
-	/**
-	 * @default 'DodecahedronGeometry'
-	 */
-	type: string;
-
-	parameters: {
-		radius: number;
-		detail: number;
-	};
-
+  parameters: {
+    radius: number;
+    detail: number;
+  };
 }

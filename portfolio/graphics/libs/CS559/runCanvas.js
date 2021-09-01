@@ -8,7 +8,7 @@
  *
  * Students are welcome to read the code to understand it, but are not
  * expected to modify this file.
- * 
+ *
  * The simple entry point (that most students will use) is the "runCanvas"
  * function that is at the end of the file. The RunCanvas class is the internal
  * implementation. Students are welcome to read the code - or to use it directly
@@ -36,9 +36,9 @@ export class RunCanvas {
       canvasName = canvas.id;
     } else {
       canvasName = canvasNameOrCanvas;
-      canvas = /** @type {HTMLCanvasElement} */ (document.getElementById(
-        canvasName
-      ));
+      canvas = /** @type {HTMLCanvasElement} */ (
+        document.getElementById(canvasName)
+      );
     }
     if (!canvas) {
       throw "RunCanvas without a Canvas to attach to!";
@@ -95,13 +95,13 @@ export class RunCanvas {
     insertAfter(this.br2, this.range);
 
     let self = this;
-    this.runbutton.onchange = function() {
+    this.runbutton.onchange = function () {
       if (self.noloop && Number(self.range.value) >= 1) {
         self.setValue(0);
       }
       self.tick(undefined);
     };
-    this.range.oninput = function() {
+    this.range.oninput = function () {
       let val = Number(self.range.value);
       self.setValue(val);
     };
@@ -121,7 +121,7 @@ export class RunCanvas {
   // set the value of the slide - make sure to update everything
   setValue(value) {
     this.value = value;
-    this.range.value = String(value);;
+    this.range.value = String(value);
     this.text.value = value.toFixed(this.digits);
     if (this.drawFunc) {
       this.drawFunc(this.canvas, value);
@@ -133,11 +133,13 @@ export class RunCanvas {
    * not a function) - but it acts as if it was
    * It is possible that tick is called without a timestamp (if the button is clicked)
    * - if that's the case, assume a delta of 0 - we generate a redraw at the current frame
-   * @param {DOMHighResTimeStamp} timestamp 
+   * @param {DOMHighResTimeStamp} timestamp
    */
   tick(timestamp) {
     // convert delta to "frames" (at 60fps)
-    const delta = ((timestamp && this.lastTime) ? timestamp-this.lastTime : 0) * 1.0/60.0;
+    const delta =
+      ((timestamp && this.lastTime ? timestamp - this.lastTime : 0) * 1.0) /
+      60.0;
     this.lastTime = timestamp;
     let maxV = Number(this.range.max);
     let stepV = Number(this.range.step);
@@ -153,7 +155,7 @@ export class RunCanvas {
     this.setValue(value);
     if (this.runbutton.checked) {
       let self = this;
-      window.requestAnimationFrame(function(timestamp) {
+      window.requestAnimationFrame(function (timestamp) {
         self.tick(timestamp);
       });
     }
@@ -161,21 +163,21 @@ export class RunCanvas {
 }
 
 /**
-  * simple entry point - give it the name of a canvas, and it guesses the rest
-  * but it also loses access to all the parameters
-  * 
-  * Note that the drawing function gets the Canvas element and the slider value
-  * not the time!
-  * 
-  * @param {HTMLCanvasElement|string} canvasName 
-  * @param {function(HTMLCanvasElement, Number) : any} [drawFunc] 
-  * @param {*} initial 
-  * @param {*} noloop 
-  * @param {*} min 
-  * @param {Number} [max=1] 
-  * @param {Number} [step=.02] - steps per frame (at 60fps)
-  */
- export function runCanvas(
+ * simple entry point - give it the name of a canvas, and it guesses the rest
+ * but it also loses access to all the parameters
+ *
+ * Note that the drawing function gets the Canvas element and the slider value
+ * not the time!
+ *
+ * @param {HTMLCanvasElement|string} canvasName
+ * @param {function(HTMLCanvasElement, Number) : any} [drawFunc]
+ * @param {*} initial
+ * @param {*} noloop
+ * @param {*} min
+ * @param {Number} [max=1]
+ * @param {Number} [step=.02] - steps per frame (at 60fps)
+ */
+export function runCanvas(
   canvasName,
   drawFunc = undefined,
   initial = 0.5,

@@ -1,27 +1,25 @@
-
-
 /* Panel */
 
-	.panel {
-		margin: 0 auto;
-	}
+.panel {
+  margin: 0 auto;
+}
 
-		.panel > .image {
-			float: left;
-		}
+.panel > .image {
+  float: left;
+}
 
-		.panel > .content {
-			float: left;
-		}
+.panel > .content {
+  float: left;
+}
 
-		.panel:after {
-			content: '';
-			display: block;
-			clear: both;
-		}
+.panel:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-		.panel.secondary > .content:after {
-			display: none;
-		}
+.panel.secondary > .content:after {
+  display: none;
+}
 
 /* Wrapper */

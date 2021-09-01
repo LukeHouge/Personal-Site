@@ -53,7 +53,10 @@ export class Copter1 extends GrObject {
     body.rotateX(T.MathUtils.degToRad(90));
     copter.add(body);
 
-    const frontCone = new T.Mesh(new T.SphereGeometry(0.5, 32, 32, 0, Math.PI), grayMat);
+    const frontCone = new T.Mesh(
+      new T.SphereGeometry(0.5, 32, 32, 0, Math.PI),
+      grayMat
+    );
     frontCone.position.y = 2;
     frontCone.position.z = 0.74;
     copter.add(frontCone);
@@ -165,7 +168,10 @@ export class CopterScene extends GrObject {
     body.rotateX(T.MathUtils.degToRad(90));
     copter.add(body);
 
-    const frontCone = new T.Mesh(new T.SphereGeometry(0.5, 32, 32, 0, Math.PI), grayMat);
+    const frontCone = new T.Mesh(
+      new T.SphereGeometry(0.5, 32, 32, 0, Math.PI),
+      grayMat
+    );
     frontCone.position.y = 2;
     frontCone.position.z = 0.74;
     copter.add(frontCone);
@@ -251,7 +257,9 @@ export class CopterScene extends GrObject {
     // make the dish itself from lathe geometry
     let points = [];
     for (let i = 0; i < 10; i++) {
-      points.push(new T.Vector2((Math.sin(i * 0.2) * 15 + 5) * 0.04, i * 0.075));
+      points.push(
+        new T.Vector2((Math.sin(i * 0.2) * 15 + 5) * 0.04, i * 0.075)
+      );
     }
     var lathe = new T.Mesh(new T.LatheGeometry(points, 20), orangeMat);
     lathe.position.y = 1.75;

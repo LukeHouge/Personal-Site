@@ -50,7 +50,7 @@ export function insertElement(el, where = undefined) {
 }
 
 /**
- * Make a Checkbox - including a label. 
+ * Make a Checkbox - including a label.
  * If no label is given, the tag string is used as the label
  * @param {String} str
  * @param {WhereSpec} [where]
@@ -76,9 +76,9 @@ export function makeCheckbox(str, where, label = undefined) {
 
 /**
  * Make a button
- * 
- * @param {String} str - element ID (used for label as well) 
- * @param {WhereSpec} [where] 
+ *
+ * @param {String} str - element ID (used for label as well)
+ * @param {WhereSpec} [where]
  */
 export function makeButton(str, where) {
   const safename = str.replace(/ /g, str);
@@ -93,15 +93,15 @@ export function makeButton(str, where) {
 
 /**
  * Make a div with a box border around it - useful for making panels
- * 
+ *
  * params is an object that can have:
  * margin
  * padding
  * width
  * flex (binary - whether this should allow for layout inside)
- * 
- * @param {Object} [params] 
- * @param {WhereSpec} [where] 
+ *
+ * @param {Object} [params]
+ * @param {WhereSpec} [where]
  */
 export function makeBoxDiv(params, where) {
   if (!params) params = {};
@@ -126,8 +126,8 @@ export function makeBoxDiv(params, where) {
 
 /**
  * create an empty DIV with its style set to allow for Flex layout
- * 
- * @param {WhereSpec} [where] 
+ *
+ * @param {WhereSpec} [where]
  */
 export function makeFlexDiv(where) {
   let style = "display: flex; flex-direction: row; flex-wrap:wrap";
@@ -140,10 +140,10 @@ export function makeFlexDiv(where) {
 /**
  * Make a textbox that is only for outputting text - it is read only
  * the label = str if none is given
- * 
- * @param {String} str 
- * @param {WhereSpec} [where] 
- * @param {String} [label] 
+ *
+ * @param {String} str
+ * @param {WhereSpec} [where]
+ * @param {String} [label]
  */
 export function makeOutbox(str, where, label) {
   label = label ? label : str;
@@ -167,7 +167,7 @@ export function makeOutbox(str, where, label) {
 
 /**
  * Make a selector (a drop down for a list of values)
- * 
+ *
  * @param {Array<String>} values
  * @param {WhereSpec} [where]
  * @param {string} [initial]
@@ -175,7 +175,7 @@ export function makeOutbox(str, where, label) {
  */
 export function makeSelect(values, where, initial) {
   let select = document.createElement("select");
-  values.forEach(function(ch) {
+  values.forEach(function (ch) {
     let opt = document.createElement("option");
     opt.value = ch;
     opt.text = ch;
@@ -188,12 +188,12 @@ export function makeSelect(values, where, initial) {
 
 /**
  * just stick a break in (to start a new line)
- * 
+ *
  * @param {WhereSpec} [where]
  */
 export function makeBreak(where) {
   let br = document.createElement("BR");
-  br.setAttribute("style","clear:both")
+  br.setAttribute("style", "clear:both");
 
   insertElement(br, where);
   return br;
@@ -201,14 +201,14 @@ export function makeBreak(where) {
 
 /**
  * sticks in a break with the styling set to help with flex layout
- * 
- * @param {WhereSpec} [where] 
+ *
+ * @param {WhereSpec} [where]
  */
 export function makeFlexBreak(where) {
-    let br = document.createElement("DIV");
-    br.setAttribute("style","flex-basis:100%; height:0px");
-    insertElement(br, where);
-    return br;
+  let br = document.createElement("DIV");
+  br.setAttribute("style", "flex-basis:100%; height:0px");
+  insertElement(br, where);
+  return br;
 }
 
 /**
@@ -240,8 +240,8 @@ export function makeHead(text, where, params = {}) {
 
 /**
  * Make a paragraph element and insert it into the DOM
- * @param {*} text 
- * @param {WhereSpec} [where] 
+ * @param {*} text
+ * @param {WhereSpec} [where]
  */
 export function makeParagraph(text, where) {
   const par = document.createElement("p");
@@ -252,9 +252,9 @@ export function makeParagraph(text, where) {
 
 /**
  * Make a span around a given piece of text
- * 
- * @param {*} text 
- * @param {WhereSpec} [where] 
+ *
+ * @param {*} text
+ * @param {WhereSpec} [where]
  */
 export function makeSpan(text, where) {
   const par = document.createElement("span");
@@ -337,10 +337,10 @@ export class LabelSlider {
   }
 
   /**
-   * 
-   * @param {Number} min 
-   * @param {Number} max 
-   * @param {Number} step 
+   *
+   * @param {Number} min
+   * @param {Number} max
+   * @param {Number} step
    */
   setRange(min, max, step) {
     this.range.setAttribute("min", String(min));
@@ -358,8 +358,8 @@ export class LabelSlider {
   }
 
   /**
-   * 
-   * @param {Number} val 
+   *
+   * @param {Number} val
    */
   set(val) {
     this.range.value = String(val);

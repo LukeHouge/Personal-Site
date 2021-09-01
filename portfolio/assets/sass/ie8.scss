@@ -1,7 +1,7 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
+@import "libs/vars";
+@import "libs/functions";
+@import "libs/mixins";
+@import "libs/skel";
 
 /*
 	Formula by Pixelarity
@@ -11,22 +11,22 @@
 
 /* Button */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		border: solid 2px _palette(border);
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  border: solid 2px _palette(border);
 
-		&.special {
-			border: 0;
-		}
-	}
+  &.special {
+    border: 0;
+  }
+}
 
 /* Banner */
 
-	#banner {
-		&:before {
-			display: none;
-		}
-	}
+#banner {
+  &:before {
+    display: none;
+  }
+}

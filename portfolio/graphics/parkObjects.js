@@ -101,7 +101,16 @@ export class GrColoredRoundabout extends GrObject {
     base.add(platform_group);
     platform_group.translateY(0.25);
 
-    let section_geom = new T.CylinderGeometry(2, 1.8, 0.3, 8, 4, false, 0, Math.PI / 2);
+    let section_geom = new T.CylinderGeometry(
+      2,
+      1.8,
+      0.3,
+      8,
+      4,
+      false,
+      0,
+      Math.PI / 2
+    );
     let section_mat;
     let section;
 
@@ -149,7 +158,9 @@ export class GrColoredRoundabout extends GrObject {
     function buildHandle() {
       /**@type THREE.CurvePath */
       let handle_curve = new T.CurvePath();
-      handle_curve.add(new T.LineCurve3(new T.Vector3(-0.5, 0, 0), new T.Vector3(-0.5, 0.8, 0)));
+      handle_curve.add(
+        new T.LineCurve3(new T.Vector3(-0.5, 0, 0), new T.Vector3(-0.5, 0.8, 0))
+      );
       handle_curve.add(
         new T.CubicBezierCurve3(
           new T.Vector3(-0.5, 0.8, 0),
@@ -158,7 +169,9 @@ export class GrColoredRoundabout extends GrObject {
           new T.Vector3(0.5, 0.8, 0)
         )
       );
-      handle_curve.add(new T.LineCurve3(new T.Vector3(0.5, 0.8, 0), new T.Vector3(0.5, 0, 0)));
+      handle_curve.add(
+        new T.LineCurve3(new T.Vector3(0.5, 0.8, 0), new T.Vector3(0.5, 0, 0))
+      );
       return new T.TubeGeometry(handle_curve, 64, 0.1, 8);
     }
   }
@@ -274,8 +287,10 @@ export class GrSimpleSwing extends GrObject {
   /* stepWorld method - make the swing swing! */
   stepWorld(delta, timeOfDay) {
     // if we swing too far forward or too far backward, switch directions.
-    if (this.hanger.rotation.z >= this.swing_max_rotation) this.swing_direction = -1;
-    else if (this.hanger.rotation.z <= -this.swing_max_rotation) this.swing_direction = 1;
+    if (this.hanger.rotation.z >= this.swing_max_rotation)
+      this.swing_direction = -1;
+    else if (this.hanger.rotation.z <= -this.swing_max_rotation)
+      this.swing_direction = 1;
     this.hanger.rotation.z += this.swing_direction * 0.003 * delta;
   }
 }
@@ -439,7 +454,12 @@ export class GrCarousel extends GrObject {
     base.add(platform_group);
     platform_group.translateY(0.5);
 
-    let platform_geom = new T.CylinderGeometry(0.95 * width, 0.95 * width, 0.2, 32);
+    let platform_geom = new T.CylinderGeometry(
+      0.95 * width,
+      0.95 * width,
+      0.2,
+      32
+    );
     let platform_mat = new T.MeshStandardMaterial({
       color: "gold",
       metalness: 0.3,
@@ -534,7 +554,10 @@ export class GrCarousel extends GrObject {
     // set the y position based on the time
     let t = this.time % 1; // where are we in the cycle?
     horses.forEach(function (horse) {
-      if (horse.horseObj.position.y >= 2.1 || horse.horseObj.position.y <= 0.5) {
+      if (
+        horse.horseObj.position.y >= 2.1 ||
+        horse.horseObj.position.y <= 0.5
+      ) {
         horse.speed *= -1;
       }
       horse.count += horse.speed;
@@ -581,7 +604,16 @@ export class GrTopSpin extends GrObject {
     r_chain.translateZ(-0.4);
 
     let spinner_group = new T.Group();
-    let spinner_geom = new T.CylinderGeometry(0.4, 0.4, 1, 32, 32, false, 0, Math.PI / 2);
+    let spinner_geom = new T.CylinderGeometry(
+      0.4,
+      0.4,
+      1,
+      32,
+      32,
+      false,
+      0,
+      Math.PI / 2
+    );
     let spinner_mat;
     let spinner;
 
@@ -685,7 +717,11 @@ export class GrPond extends GrObject {
     // make a boat
     let boat = new T.Mesh(
       new T.CylinderGeometry(0.5, 0.5, 1.5),
-      new T.MeshStandardMaterial({ color: "black", metalness: 0.9, roughness: 0.1 })
+      new T.MeshStandardMaterial({
+        color: "black",
+        metalness: 0.9,
+        roughness: 0.1,
+      })
     );
     boat.rotateX(Math.PI / 2);
     boat.position.y = 0.4;

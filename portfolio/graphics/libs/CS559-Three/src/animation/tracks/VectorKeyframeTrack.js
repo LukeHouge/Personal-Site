@@ -1,25 +1,24 @@
-import { KeyframeTrack } from '../KeyframeTrack.js';
+import { KeyframeTrack } from "../KeyframeTrack.js";
 
 /**
  * A Track of vectored keyframe values.
  */
 
-function VectorKeyframeTrack( name, times, values, interpolation ) {
-
-	KeyframeTrack.call( this, name, times, values, interpolation );
-
+function VectorKeyframeTrack(name, times, values, interpolation) {
+  KeyframeTrack.call(this, name, times, values, interpolation);
 }
 
-VectorKeyframeTrack.prototype = Object.assign( Object.create( KeyframeTrack.prototype ), {
+VectorKeyframeTrack.prototype = Object.assign(
+  Object.create(KeyframeTrack.prototype),
+  {
+    constructor: VectorKeyframeTrack,
 
-	constructor: VectorKeyframeTrack,
+    ValueTypeName: "vector",
 
-	ValueTypeName: 'vector'
+    // ValueBufferType is inherited
 
-	// ValueBufferType is inherited
-
-	// DefaultInterpolation is inherited
-
-} );
+    // DefaultInterpolation is inherited
+  }
+);
 
 export { VectorKeyframeTrack };

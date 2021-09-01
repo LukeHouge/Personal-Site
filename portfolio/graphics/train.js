@@ -58,23 +58,51 @@ let divisions,
 let count = 0;
 
 // declaring sliders and checkboxes
-let arcLengthCheckbox = /** @type {HTMLInputElement} */ (document.getElementById("arcLength"));
-let showPointsCheckbox = /** @type {HTMLInputElement} */ (document.getElementById("points"));
-let simpleTrackCheckbox = /** @type {HTMLInputElement} */ (document.getElementById("simple"));
-let speedSlider = /** @type {HTMLInputElement} */ (document.getElementById("speed"));
-let tensionSlider = /** @type {HTMLInputElement} */ (document.getElementById("tension"));
-let divisionsSlider = /** @type {HTMLInputElement} */ (document.getElementById("divisions"));
-let numCarsSlider = /** @type {HTMLInputElement} */ (document.getElementById("numCars"));
-let lightCheckbox = /** @type {HTMLInputElement} */ (document.getElementById("light"));
-let lightSlider = /** @type {HTMLInputElement} */ (document.getElementById("lightBrightness"));
-let tieGapSlider = /** @type {HTMLInputElement} */ (document.getElementById("tieGap"));
-let sceneryCheckbox = /** @type {HTMLInputElement} */ (document.getElementById("scenery"));
-let smokeCheckBox = /** @type {HTMLInputElement} */ (document.getElementById("smoke"));
-let smokeFreqSlider = /** @type {HTMLInputElement} */ (document.getElementById("smokeFreq"));
+let arcLengthCheckbox = /** @type {HTMLInputElement} */ (
+  document.getElementById("arcLength")
+);
+let showPointsCheckbox = /** @type {HTMLInputElement} */ (
+  document.getElementById("points")
+);
+let simpleTrackCheckbox = /** @type {HTMLInputElement} */ (
+  document.getElementById("simple")
+);
+let speedSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("speed")
+);
+let tensionSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("tension")
+);
+let divisionsSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("divisions")
+);
+let numCarsSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("numCars")
+);
+let lightCheckbox = /** @type {HTMLInputElement} */ (
+  document.getElementById("light")
+);
+let lightSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("lightBrightness")
+);
+let tieGapSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("tieGap")
+);
+let sceneryCheckbox = /** @type {HTMLInputElement} */ (
+  document.getElementById("scenery")
+);
+let smokeCheckBox = /** @type {HTMLInputElement} */ (
+  document.getElementById("smoke")
+);
+let smokeFreqSlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("smokeFreq")
+);
 let smokeDissipationSlider = /** @type {HTMLInputElement} */ (
   document.getElementById("smokeDissipation")
 );
-let numScenerySlider = /** @type {HTMLInputElement} */ (document.getElementById("numScenery"));
+let numScenerySlider = /** @type {HTMLInputElement} */ (
+  document.getElementById("numScenery")
+);
 
 // init function to grab starting values from sliders / check boxes
 function init() {
@@ -359,7 +387,14 @@ function drawCurves(start, ctx) {
   ctx.beginPath();
   ctx.moveTo(start.x, start.y);
   curves.forEach(function (curve) {
-    ctx.bezierCurveTo(curve.cp1.x, curve.cp1.y, curve.cp2.x, curve.cp2.y, curve.end.x, curve.end.y);
+    ctx.bezierCurveTo(
+      curve.cp1.x,
+      curve.cp1.y,
+      curve.cp2.x,
+      curve.cp2.y,
+      curve.end.x,
+      curve.end.y
+    );
   });
   ctx.lineWidth = 3;
   ctx.stroke();
@@ -375,12 +410,25 @@ function computePoint(u, curvePoints) {
   let curve = curvePoints[seg];
 
   // determine the previous segment
-  let lastCurve = seg - 1 >= 0 ? curvePoints[seg - 1] : curvePoints[curvePoints.length - 1];
+  let lastCurve =
+    seg - 1 >= 0 ? curvePoints[seg - 1] : curvePoints[curvePoints.length - 1];
 
   // just get the fractional component from u value (u from 0-1)
   u -= seg;
-  let x = parameterizeBezier(u, lastCurve.end.x, curve.cp1.x, curve.cp2.x, curve.end.x);
-  let y = parameterizeBezier(u, lastCurve.end.y, curve.cp1.y, curve.cp2.y, curve.end.y);
+  let x = parameterizeBezier(
+    u,
+    lastCurve.end.x,
+    curve.cp1.x,
+    curve.cp2.x,
+    curve.end.x
+  );
+  let y = parameterizeBezier(
+    u,
+    lastCurve.end.y,
+    curve.cp1.y,
+    curve.cp2.y,
+    curve.end.y
+  );
 
   return { Dx: x.tangent, Dy: y.tangent, Px: x.position, Py: y.position };
 }
@@ -441,7 +489,8 @@ function drawCar(ctx, u) {
   if (smokeEnable && numMade == numCars - 1) {
     // use global counter to only draw smoke at an interval controlled by smokeFreq
     count++;
-    if (count % smokeFreq == 0) smoke.push({ x: point.Px, y: point.Py, dur: 0 });
+    if (count % smokeFreq == 0)
+      smoke.push({ x: point.Px, y: point.Py, dur: 0 });
 
     // draw all the smoke puffs
     smoke.forEach(function (puff) {
@@ -518,7 +567,9 @@ function getRndInteger(min, max) {
  * Initialization code - sets up the UI and start the train
  */
 {
-  let canvas = /** @type {HTMLCanvasElement} */ (document.getElementById("canvas1"));
+  let canvas = /** @type {HTMLCanvasElement} */ (
+    document.getElementById("canvas1")
+  );
   let context = canvas.getContext("2d");
 
   // we need the slider for the draw function, but we need the draw function

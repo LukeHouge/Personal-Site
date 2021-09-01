@@ -1,55 +1,47 @@
-import { Font } from '../extras/core/Font.js';
-import { FileLoader } from './FileLoader.js';
-import { Loader } from './Loader.js';
+import { Font } from "../extras/core/Font.js";
+import { FileLoader } from "./FileLoader.js";
+import { Loader } from "./Loader.js";
 
-function FontLoader( manager ) {
-
-	Loader.call( this, manager );
-
+function FontLoader(manager) {
+  Loader.call(this, manager);
 }
 
-FontLoader.prototype = Object.assign( Object.create( Loader.prototype ), {
+FontLoader.prototype = Object.assign(Object.create(Loader.prototype), {
+  constructor: FontLoader,
 
-	constructor: FontLoader,
+  load: function (url, onLoad, onProgress, onError) {
+    const scope = this;
 
-	load: function ( url, onLoad, onProgress, onError ) {
+    const loader = new FileLoader(this.manager);
+    loader.setPath(this.path);
+    loader.setRequestHeader(this.requestHeader);
+    loader.setWithCredentials(scope.withCredentials);
+    loader.load(
+      url,
+      function (text) {
+        let json;
 
-		const scope = this;
+        try {
+          json = JSON.parse(text);
+        } catch (e) {
+          console.warn(
+            "THREE.FontLoader: typeface.js support is being deprecated. Use typeface.json instead."
+          );
+          json = JSON.parse(text.substring(65, text.length - 2));
+        }
 
-		const loader = new FileLoader( this.manager );
-		loader.setPath( this.path );
-		loader.setRequestHeader( this.requestHeader );
-		loader.setWithCredentials( scope.withCredentials );
-		loader.load( url, function ( text ) {
+        const font = scope.parse(json);
 
-			let json;
+        if (onLoad) onLoad(font);
+      },
+      onProgress,
+      onError
+    );
+  },
 
-			try {
-
-				json = JSON.parse( text );
-
-			} catch ( e ) {
-
-				console.warn( 'THREE.FontLoader: typeface.js support is being deprecated. Use typeface.json instead.' );
-				json = JSON.parse( text.substring( 65, text.length - 2 ) );
-
-			}
-
-			const font = scope.parse( json );
-
-			if ( onLoad ) onLoad( font );
-
-		}, onProgress, onError );
-
-	},
-
-	parse: function ( json ) {
-
-		return new Font( json );
-
-	}
-
-} );
-
+  parse: function (json) {
+    return new Font(json);
+  },
+});
 
 export { FontLoader };

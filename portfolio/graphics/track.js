@@ -19,7 +19,11 @@ let orangeMat = new T.MeshStandardMaterial({
   side: T.DoubleSide,
 });
 let blackMat = new T.MeshStandardMaterial({ color: "black", roughness: 0 });
-let silverMat = new T.MeshStandardMaterial({ color: "grey", roughness: 0.1, metalness: 0.9 });
+let silverMat = new T.MeshStandardMaterial({
+  color: "grey",
+  roughness: 0.1,
+  metalness: 0.9,
+});
 
 // global arr to hold car objects so they can be used by
 // the animate function rather than having their own stepWorld
@@ -417,7 +421,8 @@ function animate(delta) {
     // the car has just completed a lap
     else {
       // update the cars parameters (fastest lap is last lap was quicker, reset others, increment laps)
-      if (carObj.fastest > carObj.time || carObj.fastest == -1) carObj.fastest = carObj.time;
+      if (carObj.fastest > carObj.time || carObj.fastest == -1)
+        carObj.fastest = carObj.time;
       carObj.counter = 0;
       carObj.time = 0;
       carObj.laps++;
@@ -441,7 +446,10 @@ export class Copter extends GrObject {
     copter.add(body);
 
     // front and back
-    const frontCone = new T.Mesh(new T.SphereGeometry(0.5, 32, 32, 0, Math.PI), grayMat);
+    const frontCone = new T.Mesh(
+      new T.SphereGeometry(0.5, 32, 32, 0, Math.PI),
+      grayMat
+    );
     frontCone.position.y = 2;
     frontCone.position.z = 0.74;
     copter.add(frontCone);

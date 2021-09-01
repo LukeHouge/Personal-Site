@@ -6,7 +6,12 @@
   </head>
 
   <body>
-    <canvas id="flock" height="600px" width="600px" style="border: 2px solid black"></canvas>
+    <canvas
+      id="flock"
+      height="600px"
+      width="600px"
+      style="border: 2px solid black"
+    ></canvas>
     <button id="add">Add 10</button>
     <button id="clear">Clear</button>
     <button id="reset">Reset (flocking)</button>
@@ -17,24 +22,50 @@
       </li>
       <li>
         <label>
-          <input type="checkbox" name="checkCollisions" id="checkCollisions" />Check Collisions?
+          <input
+            type="checkbox"
+            name="checkCollisions"
+            id="checkCollisions"
+          />Check Collisions?
         </label>
       </li>
       <li>
         <label>
-          <input type="range" width="100px" min="0" max="10" step=".2" value="3" id="speed" />Speed
+          <input
+            type="range"
+            width="100px"
+            min="0"
+            max="10"
+            step=".2"
+            value="3"
+            id="speed"
+          />Speed
         </label>
       </li>
       <li>
         <label>
-          <input type="range" width="100px" min="0" max="40" step="1" value="10" id="width" />Boid
-          Width
+          <input
+            type="range"
+            width="100px"
+            min="0"
+            max="40"
+            step="1"
+            value="10"
+            id="width"
+          />Boid Width
         </label>
       </li>
       <li>
         <label>
-          <input type="range" width="100px" min="0" max="50" step="1" value="5" id="frames" />Alt
-          Color Frames
+          <input
+            type="range"
+            width="100px"
+            min="0"
+            max="50"
+            step="1"
+            value="5"
+            id="frames"
+          />Alt Color Frames
         </label>
       </li>
       <li>
@@ -158,40 +189,45 @@
       <p>Notes:</p>
       <ul>
         <li>
-          The "border margin slider" can be set to 0 for default non flocking behavior where the
-          boids just bounce off the walls, or to around 50 to "nudge" the boids away from edge
-          without hitting and causing weird behavior
+          The "border margin slider" can be set to 0 for default non flocking
+          behavior where the boids just bounce off the walls, or to around 50 to
+          "nudge" the boids away from edge without hitting and causing weird
+          behavior
         </li>
         <li>
-          The "border rejection strength" slider effects how strongly they are pushed away once
-          getting within the margin range
+          The "border rejection strength" slider effects how strongly they are
+          pushed away once getting within the margin range
         </li>
         <li>
-          Obstacle random placement adheres to the border margin for boids, but if you place many
-          obstacles and then increase the border margin boids can get stuck, so you will need to
-          adjust obstacles slider which will cause new obstacles to be drawn that are within the new
-          margin
+          Obstacle random placement adheres to the border margin for boids, but
+          if you place many obstacles and then increase the border margin boids
+          can get stuck, so you will need to adjust obstacles slider which will
+          cause new obstacles to be drawn that are within the new margin
         </li>
         <li>
-          The "clear" button removes everything, more boids can be added with the add "10 button"
+          The "clear" button removes everything, more boids can be added with
+          the add "10 button"
         </li>
         <li>
-          The "Reset (no flocking)" button sets all the flocking parameters to 0 and sets everything
-          to what would be the basic requirements, with only boids bouncing off each other and
-          obstacles added from bonus points (obstacles can also be removed by setting the slider to
-          0, and the boids can be set not to bounce off each other by de-selecting the checkbox)
+          The "Reset (no flocking)" button sets all the flocking parameters to 0
+          and sets everything to what would be the basic requirements, with only
+          boids bouncing off each other and obstacles added from bonus points
+          (obstacles can also be removed by setting the slider to 0, and the
+          boids can be set not to bounce off each other by de-selecting the
+          checkbox)
         </li>
         <li>
-          The "Reset (flocking)" button sets things to what looks pleasing to me for a flocking
-          case, with alignment and separation enabled
+          The "Reset (flocking)" button sets things to what looks pleasing to me
+          for a flocking case, with alignment and separation enabled
         </li>
         <li>
-          I included sliders to change the values to any somewhat reasonable range, but with certain
-          combinations things get weird, like enabling separation and cohesion together
+          I included sliders to change the values to any somewhat reasonable
+          range, but with certain combinations things get weird, like enabling
+          separation and cohesion together
         </li>
         <li>
-          I added a FPS display (not sure if it is 100% correct) just to get an idea of what was
-          taking up the most computations, and left it in
+          I added a FPS display (not sure if it is 100% correct) just to get an
+          idea of what was taking up the most computations, and left it in
         </li>
       </ul>
     </div>

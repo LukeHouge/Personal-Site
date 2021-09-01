@@ -3,10 +3,10 @@
 
 //
 // CS559 - Graphics Town - Workbook 12
-// Example Code: 
+// Example Code:
 // Example "Town"
 //
-// This sets up the town loading different objects. 
+// This sets up the town loading different objects.
 //
 // It should be called from the onload function, after the world has been created
 
@@ -22,7 +22,7 @@ import { MorphTest } from "./morph.js";
 /** you may use the sample objects, but not the sample layout           */
 /***/
 export function main(world) {
-// make two rows of houses, mainly to give something to look at
+  // make two rows of houses, mainly to give something to look at
   for (let i = -19; i < 20; i += 5) {
     world.add(new SimpleHouse({ x: i, z: -12 }));
     world.add(new SimpleHouse({ x: i, z: 12 }));
@@ -56,4 +56,3 @@ export function main(world) {
   world.add(new ShinySculpture(world));
   world.add(new MorphTest({ x: 10, y: 3, r: 2 }));
 }
-

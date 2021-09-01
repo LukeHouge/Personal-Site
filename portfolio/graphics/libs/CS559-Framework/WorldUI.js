@@ -31,7 +31,9 @@ function remoteButton(button, url, world, where) {
         mod.logme(world, T);
       })
       .catch((err) => {
-        alert("Grading Script not Available - students don't need to worry about this.");
+        alert(
+          "Grading Script not Available - students don't need to worry about this."
+        );
         console.log(`error loading grading module ${err}`);
       });
     /* jshint ignore:end */
@@ -90,7 +92,11 @@ export class WorldUI {
     // create "view solo" checkbox.
     this.selectionChkList = InputHelpers.makeFlexDiv(this.div);
     /**@type HTMLInputElement */
-    this.chkSolo = InputHelpers.makeCheckbox("chkSolo", this.selectionChkList, "View Solo Object");
+    this.chkSolo = InputHelpers.makeCheckbox(
+      "chkSolo",
+      this.selectionChkList,
+      "View Solo Object"
+    );
     this.chkSolo.onclick = function () {
       // avoid this as it is ambiguous when reading the code and lacks type info
       if (self.chkSolo.checked) {
@@ -154,11 +160,17 @@ export class WorldUI {
     // shorter list
     InputHelpers.makeBreak(this.div);
     InputHelpers.makeSpan("LookAt:", this.div);
-    this.selectLook = InputHelpers.makeSelect(world.objects.map((ob) => ob.name).sort(), this.div);
+    this.selectLook = InputHelpers.makeSelect(
+      world.objects.map((ob) => ob.name).sort(),
+      this.div
+    );
     // this has to work for either lookat or highlight
     function onSelectLook(event) {
       // if we were driving, stop!
-      if (world.view_mode == "Drive Object" || world.view_mode == "Follow Object") {
+      if (
+        world.view_mode == "Drive Object" ||
+        world.view_mode == "Follow Object"
+      ) {
         _world.setViewMode("Orbit Camera");
         self.selectViewMode.value = "Orbit Camera";
       }
@@ -170,7 +182,11 @@ export class WorldUI {
       world.camera.position.set(camparams[0], camparams[1], camparams[2]);
       let lookAt = new T.Vector3(camparams[3], camparams[4], camparams[5]);
       world.camera.lookAt(lookAt);
-      world.orbit_controls.target = new T.Vector3(camparams[3], camparams[4], camparams[5]);
+      world.orbit_controls.target = new T.Vector3(
+        camparams[3],
+        camparams[4],
+        camparams[5]
+      );
     }
     this.selectLook.onchange = onSelectLook;
 
@@ -179,7 +195,10 @@ export class WorldUI {
     if (highObjs.length) {
       InputHelpers.makeBreak(this.div);
       InputHelpers.makeSpan("LookAt (highlighted objects):", this.div);
-      this.selectLookHigh = InputHelpers.makeSelect(highObjs.map((ob) => ob.name).sort(), this.div);
+      this.selectLookHigh = InputHelpers.makeSelect(
+        highObjs.map((ob) => ob.name).sort(),
+        this.div
+      );
       this.selectLookHigh.onchange = onSelectLook;
     }
   }

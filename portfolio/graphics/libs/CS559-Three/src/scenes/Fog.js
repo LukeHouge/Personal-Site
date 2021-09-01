@@ -1,38 +1,29 @@
-import { Color } from '../math/Color.js';
+import { Color } from "../math/Color.js";
 
 class Fog {
+  constructor(color, near, far) {
+    Object.defineProperty(this, "isFog", { value: true });
 
-	constructor( color, near, far ) {
+    this.name = "";
 
-		Object.defineProperty( this, 'isFog', { value: true } );
+    this.color = new Color(color);
 
-		this.name = '';
+    this.near = near !== undefined ? near : 1;
+    this.far = far !== undefined ? far : 1000;
+  }
 
-		this.color = new Color( color );
+  clone() {
+    return new Fog(this.color, this.near, this.far);
+  }
 
-		this.near = ( near !== undefined ) ? near : 1;
-		this.far = ( far !== undefined ) ? far : 1000;
-
-	}
-
-	clone() {
-
-		return new Fog( this.color, this.near, this.far );
-
-	}
-
-	toJSON( /* meta */ ) {
-
-		return {
-			type: 'Fog',
-			color: this.color.getHex(),
-			near: this.near,
-			far: this.far
-		};
-
-	}
-
+  toJSON(/* meta */) {
+    return {
+      type: "Fog",
+      color: this.color.getHex(),
+      near: this.near,
+      far: this.far,
+    };
+  }
 }
-
 
 export { Fog };

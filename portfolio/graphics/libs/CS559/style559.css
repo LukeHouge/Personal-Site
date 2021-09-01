@@ -17,11 +17,11 @@ div.answerbox {
 }
 
 div.notebox {
-    border: 2px solid darkred;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    width:600px;  
+  border: 2px solid darkred;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 600px;
 }
 
 .box-container {

@@ -1,75 +1,73 @@
-import { Curve } from '../core/Curve.js';
-import { QuadraticBezier } from '../core/Interpolations.js';
-import { Vector3 } from '../../math/Vector3.js';
+import { Curve } from "../core/Curve.js";
+import { QuadraticBezier } from "../core/Interpolations.js";
+import { Vector3 } from "../../math/Vector3.js";
 
-function QuadraticBezierCurve3( v0 = new Vector3(), v1 = new Vector3(), v2 = new Vector3() ) {
+function QuadraticBezierCurve3(
+  v0 = new Vector3(),
+  v1 = new Vector3(),
+  v2 = new Vector3()
+) {
+  Curve.call(this);
 
-	Curve.call( this );
+  this.type = "QuadraticBezierCurve3";
 
-	this.type = 'QuadraticBezierCurve3';
-
-	this.v0 = v0;
-	this.v1 = v1;
-	this.v2 = v2;
-
+  this.v0 = v0;
+  this.v1 = v1;
+  this.v2 = v2;
 }
 
-QuadraticBezierCurve3.prototype = Object.create( Curve.prototype );
+QuadraticBezierCurve3.prototype = Object.create(Curve.prototype);
 QuadraticBezierCurve3.prototype.constructor = QuadraticBezierCurve3;
 
 QuadraticBezierCurve3.prototype.isQuadraticBezierCurve3 = true;
 
-QuadraticBezierCurve3.prototype.getPoint = function ( t, optionalTarget = new Vector3() ) {
+QuadraticBezierCurve3.prototype.getPoint = function (
+  t,
+  optionalTarget = new Vector3()
+) {
+  const point = optionalTarget;
 
-	const point = optionalTarget;
+  const v0 = this.v0,
+    v1 = this.v1,
+    v2 = this.v2;
 
-	const v0 = this.v0, v1 = this.v1, v2 = this.v2;
+  point.set(
+    QuadraticBezier(t, v0.x, v1.x, v2.x),
+    QuadraticBezier(t, v0.y, v1.y, v2.y),
+    QuadraticBezier(t, v0.z, v1.z, v2.z)
+  );
 
-	point.set(
-		QuadraticBezier( t, v0.x, v1.x, v2.x ),
-		QuadraticBezier( t, v0.y, v1.y, v2.y ),
-		QuadraticBezier( t, v0.z, v1.z, v2.z )
-	);
-
-	return point;
-
+  return point;
 };
 
-QuadraticBezierCurve3.prototype.copy = function ( source ) {
+QuadraticBezierCurve3.prototype.copy = function (source) {
+  Curve.prototype.copy.call(this, source);
 
-	Curve.prototype.copy.call( this, source );
+  this.v0.copy(source.v0);
+  this.v1.copy(source.v1);
+  this.v2.copy(source.v2);
 
-	this.v0.copy( source.v0 );
-	this.v1.copy( source.v1 );
-	this.v2.copy( source.v2 );
-
-	return this;
-
+  return this;
 };
 
 QuadraticBezierCurve3.prototype.toJSON = function () {
+  const data = Curve.prototype.toJSON.call(this);
 
-	const data = Curve.prototype.toJSON.call( this );
+  data.v0 = this.v0.toArray();
+  data.v1 = this.v1.toArray();
+  data.v2 = this.v2.toArray();
 
-	data.v0 = this.v0.toArray();
-	data.v1 = this.v1.toArray();
-	data.v2 = this.v2.toArray();
-
-	return data;
-
+  return data;
 };
 
-QuadraticBezierCurve3.prototype.fromJSON = function ( json ) {
+QuadraticBezierCurve3.prototype.fromJSON = function (json) {
+  Curve.prototype.fromJSON.call(this, json);
 
-	Curve.prototype.fromJSON.call( this, json );
+  this.v0.fromArray(json.v0);
+  this.v1.fromArray(json.v1);
+  this.v2.fromArray(json.v2);
 
-	this.v0.fromArray( json.v0 );
-	this.v1.fromArray( json.v1 );
-	this.v2.fromArray( json.v2 );
-
-	return this;
-
+  return this;
 };
-
 
 export { QuadraticBezierCurve3 };

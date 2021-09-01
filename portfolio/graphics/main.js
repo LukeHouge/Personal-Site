@@ -13,7 +13,12 @@ import * as SimpleObjects from "./libs/CS559-Framework/SimpleObjects.js";
 import { CircularTrack, TrackCar } from "./examples/track.js";
 
 // Imports from previous workbooks
-import { GrColoredRoundabout, GrAdvancedSwing, GrCarousel, GrTopSpin } from "./parkObjects.js";
+import {
+  GrColoredRoundabout,
+  GrAdvancedSwing,
+  GrCarousel,
+  GrTopSpin,
+} from "./parkObjects.js";
 import { House1, House2, Theater, Tree } from "./buildings.js";
 import {
   GrCrane,
@@ -48,7 +53,9 @@ export function main(world) {
   // Use an image for the groundplane
   const loader = new T.TextureLoader();
   const texture = loader.load("./images/ground.png");
-  world.groundplane.objects[0].material = new T.MeshBasicMaterial({ map: texture });
+  world.groundplane.objects[0].material = new T.MeshBasicMaterial({
+    map: texture,
+  });
 
   ////////////////////////////////////
   // EXAMPLE OBJECT: track with car //

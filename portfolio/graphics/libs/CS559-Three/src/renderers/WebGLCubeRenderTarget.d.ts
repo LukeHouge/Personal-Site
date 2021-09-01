@@ -1,19 +1,22 @@
-import { WebGLRenderTargetOptions, WebGLRenderTarget } from './WebGLRenderTarget';
-import { WebGLRenderer } from './WebGLRenderer';
-import { Texture } from './../textures/Texture';
-import { CubeTexture } from './../textures/CubeTexture';
+import {
+  WebGLRenderTargetOptions,
+  WebGLRenderTarget,
+} from "./WebGLRenderTarget";
+import { WebGLRenderer } from "./WebGLRenderer";
+import { Texture } from "./../textures/Texture";
+import { CubeTexture } from "./../textures/CubeTexture";
 
 export class WebGLCubeRenderTarget extends WebGLRenderTarget {
+  constructor(size: number, options?: WebGLRenderTargetOptions);
 
-	constructor(
-		size: number,
-		options?: WebGLRenderTargetOptions
-	);
+  texture: CubeTexture;
 
-	texture: CubeTexture;
+  fromEquirectangularTexture(renderer: WebGLRenderer, texture: Texture): this;
 
-	fromEquirectangularTexture( renderer: WebGLRenderer, texture: Texture ): this;
-
-	clear( renderer: WebGLRenderer, color: boolean, depth: boolean, stencil: boolean ): void;
-
+  clear(
+    renderer: WebGLRenderer,
+    color: boolean,
+    depth: boolean,
+    stencil: boolean
+  ): void;
 }
