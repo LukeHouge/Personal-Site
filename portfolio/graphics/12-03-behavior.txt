@@ -1,0 +1,10 @@
+Three different behaviors that you made:
+1. Cars moving around track and following 3D spline
+2. Copter moving around track pointing at the cars (articulated with props as well)
+3. Excavator moves back and forth and articulates (like it is scooping dirt)
+
+One behavior that is not simple:
+Not simple: I made a couple of cars (GLTF files I loaded in) and have them going around a track. I made a 3D Catmull-Rom spline that I tried to make mimic an F1 track, and the cars I loaded are models of F1 cars. For the requirements I made the spline 3D, and the cars follow it with banking and such-- even though F1 tracks would mostly be flat. There are currently 2 cars, and each is an object with parameters so I can track speed, laps, etc. The speed is random, and changes every 100 times the animation loop is run. I track the previous speed, and if current speed is different gradually step up/down to the new speed as to smooth the movement, and not have abrupt speed changes. I have this in place so it is more of a "race" and not just two cars moving at constant different speeds, but they speed up and slow down, passing and lapping one another at times. I also added a tracker for number of laps, and setup a leader board that tracks the current leader, and shows number of laps each car has completed. Additionally the fastest lap each car has completed is recorded and updated on the leader board.
+
+Animated Articulated Figure:
+Articulated: copter and excavator (as well as other construction vehicles)

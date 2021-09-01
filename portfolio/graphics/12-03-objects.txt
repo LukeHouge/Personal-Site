@@ -1,0 +1,28 @@
+Two kinds of objects created for this assignment:
+1. 3D track with pylons
+2. Leader board
+3. TV screen showing track dynamically
+
+Five other kinds of objects that you created:
+3. Houses from past assignment (large, small, theater)
+4. Cars from past assignment (Cybertruck, semi)
+5. Construction equipment from past assignment (Backhoe, Truck crane, and crane/excavator (provided from WB))
+6. Drone from past assignment
+7. Trees from past assignment
+8. Park objects from past assignment (carousel, top spin, and swing/roundabout (provided from WB))
+
+At least on of each type of object:
+Building/structure: House (2 types) and theater
+Vehicle: 2 F1 cars, my Cybertruck and Tesla Semi
+Natural Element: Tree
+
+Object loaded from a model file:
+Model: 
+    - Two F1 cars   
+    - Bleachers (to surround F1 track)
+    - Construction building (for there to be a reason why the construction objects are there)
+
+An object with a shader that you wrote:
+ShaderObj: Added a random noise shader to the leader board to simulate static/pixelation that would be on a real display
+
+Shader for track from here (did not write): https://thebookofshaders.com/edit.php?log=161128212019

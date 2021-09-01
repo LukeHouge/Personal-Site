@@ -1,0 +1,8 @@
+Advanced Thing:
+
+- Leader board
+    - I created a leader board that displays the current race leader (which car is ahead) and the fastest lap they have completed. It updates the order displayed based off the number of laps, and if that is equal then how far along the track each car has gone in the current lap. I added a shader over the top with random noise to simulate static like you would see on a screen. There is also a dynamic environment map applied to the left hand side of the screen, acting sort of like a jumbotron, and following the 1st (red) car around the track. This is done with a cubecam that is positioned and then updated to always look at that car.
+- Cars follow 3D spline
+    - I created a Catmull-Rom spline to look like an F1 track, and then imported models of 2 F1 cars and had them follow the 3D track around. I had to create an up vector, and compute the dot products and place the car on the right place. The track I attempted to loosely model from the Spa F1 track in Belgium (https://www.formula1.com/en/information.belgium-circuit-de-spa-francorchamps.3LltuYaAXVRU8iezEsjzGw.html). I also added pylons to support the parts of the track that were above ground, as well as applying a shader to mimic a rocky road. 
+- Copter circling board and aiming "camera" at one car (like a filming drone)
+    - I also added a drone I made from a previous workbook that follows the track, and rotates to point at the first (red) car, sort of like a flying film drone there might be at a race.

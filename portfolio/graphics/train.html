@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="libs/CS559/style559.css" />
+  </head>
+
+  <body>
+    <canvas id="canvas1" height="600" width="600"></canvas>
+    <ul style="list-style-type: none">
+      <li>
+        <label> <input type="checkbox" name="arcLength" id="arcLength" />Arc Length? </label>
+      </li>
+      <li>
+        <label> <input type="checkbox" name="simple" id="simple" />Simple Track? </label>
+      </li>
+      <li>
+        <label> <input type="checkbox" name="scenery" id="scenery" />Scenery? </label>
+      </li>
+      <li>
+        <label> <input type="checkbox" name="light" id="light" />Light? </label>
+      </li>
+      <li>
+        <label> <input type="checkbox" name="smoke" id="smoke" />Smoke? </label>
+      </li>
+      <li>
+        <label> <input type="checkbox" name="points" id="points" />Show points? </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="0"
+            max="2"
+            step=".1"
+            value="1"
+            id="tension"
+          />Tension
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="0"
+            max="0.1"
+            step="0.001"
+            value="0.02"
+            id="speed"
+          />Speed
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="5"
+            max="100"
+            step="5"
+            value="45"
+            id="divisions"
+          />Divisions
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="1"
+            max="20"
+            step="1"
+            value="3"
+            id="numCars"
+          />Number of Cars
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="0.03"
+            max="1"
+            step="0.01"
+            value="0.1"
+            id="tieGap"
+          />Tie Gap
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="0.2"
+            max="1.2"
+            step="0.1"
+            value="0.5"
+            id="lightBrightness"
+          />Light Brightness
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="0.001"
+            max="0.1"
+            step="0.001"
+            value="0.01"
+            id="smokeDissipation"
+          />Smoke Dissipation Rate
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="1"
+            max="30"
+            step="1"
+            value="4"
+            id="smokeFreq"
+          />Smoke Generation Gap (lower is more frequent)
+        </label>
+      </li>
+      <li>
+        <label>
+          <input
+            type="range"
+            width="100px"
+            min="1"
+            max="200"
+            step="1"
+            value="75"
+            id="numScenery"
+          />Number of Trees
+        </label>
+      </li>
+    </ul>
+    <script src="train.js" type="module" defer></script>
+  </body>
+</html>

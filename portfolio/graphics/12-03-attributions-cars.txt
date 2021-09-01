@@ -1,0 +1,7 @@
+Please describe the vehicles you created and how you made them in this file 09-07-01.txt
+
+I tried to make something resembling the Tesla Semi. This was a fairly basic shape but a little more interesting than a basic semi truck. I used a simple box geometry for the back and the "axle" and then made a bunch of wheels. I used the shape geometry for the front with a Bezier curve to get the smooth front and made it look metallic and shiny. 
+
+For the second car I tried to make something that sort of resembled a Cybertruck from Tesla to go along with the Tesla semi. I made this one similarly out of shape geometries, and added some black windows, and a texture of a cracked window to the one that Elon threw a ball at on stage, cracking it. 
+
+Crack: https://www.dreamstime.com/royalty-free-stock-photography-broken-window-image3819037#res26615551

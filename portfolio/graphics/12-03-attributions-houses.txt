@@ -1,0 +1,34 @@
+Please describe the buildings you created in this file 09-06-01.txt
+
+Explain how you made the buildings. 
+
+For building 1 it is a very basic cube that I essentially copied from the dice, just with 4 more pieces added for the top, which was easy since that only needed one extra vertex at the top middle. I found a nice brick texture online, and in Pixelmator Pro (like Photoshop but Mac native) I spanned the brick texture many times so it looked more realistic size wise, and then pasted in the windows, and door from the provided house image. I made a front, and then sides image without a door. I simply applied the texture to each side independently, but needed to make a new material group for the front, and sides since they were separate textures. Roof was the same process except I just applied a texture from online onto all sides.
+
+For house two I started by building all the walls, which was mostly the same as the cube but a little more complex. I then added the roof pieces. I did two large wide roof pieces for the back, and the front I added a vertex in the middle of the back roof to connect to and make it look seamless without overlapping at all. For the texture I decided to make one big texture and wrap it around. I thought this would be easier, and save importing many different materials and maps. So I made a canvas in Pixelmator 100in x 20in and since there was 8 sides on the house, with the back being 3x longer, I added guides at these spacings and pasted in some windows, and doors I found online. For the roof I did a similar thing above the side parts that was repeated across the whole thing. For the sides where the roof pokes up I had to make more siding there instead of roof. Both the roof and siding textures were found online, and repeated many times across the image seamlessly to make their size more realistic.
+
+The theater was done a similar way. I made two big boxes essentially and then added a front triangle thing like you would see on old theaters. I decided to go with a flat roof made of a pebbles material as that is what most big mall buildings like this would be made of. I added some windows, and red theater doors I found online. I then added some frames, and put in 6 movie posters of some of my favorite movies. Then I made a separate texture for the triangle thing, listing the movies playing in a theater like font. I decided to make 3 different materials/textures for this one just because I thought it would be easier than doing 1 big wrap like I did for building two, but still combined all the images and sized things in Pixelmator and then used the percentages from guide lines I had up while designing the wrap to map it to the different sides.
+
+The tree I resused from my snowman assignment.
+
+Image Sources:
+
+- House 1 windows and doors from provided house image
+- House 1 roof: https://www.textures.com/download/RooftilesSlate0148/87736
+- House 1 walls: https://www.textures.com/search?q=BRICKSMALLBROWN0261
+- House 2 walls: https://www.textures.com/search?q=TexturesCom_WoodSiding2_2x2_1K_albedo.tif
+- House 2 roof: https://www.textures.com/search?q=TexturesCom_Roofing_SquareOld2_1K_albedo.tif
+- House 2 window: https://pixabay.com/illustrations/window-building-architecture-view-5650911/
+- House 2 wide window: https://pixabay.com/photos/window-room-interior-home-design-3307004/
+- House 2 arch window: https://commons.wikimedia.org/wiki/File:Modern_Arch_Window_12.jpg
+- House 2 door: https://pixabay.com/photos/door-doorway-entrance-indoors-3299119/
+- Theater marble (tan) walls: https://www.textures.com/search?q=MARBLETILES0167
+- Theater marble (dark) walls: https://www.textures.com/search?q=PBR0451
+- Theater pebble roof: https://www.textures.com/download/3DScans0621/138401
+- Movie Poster 1: https://www.imdb.com/title/tt0068646/?ref_=rt_li_tt
+- Movie Poster 2: https://www.imdb.com/title/tt6751668/?ref_=adv_li_tt
+- Movie Poster 3: https://www.imdb.com/title/tt1375666/?ref_=adv_li_tt
+- Movie Poster 4: https://www.imdb.com/title/tt0468569/?ref_=adv_li_tt
+- Movie Poster 5: https://www.imdb.com/title/tt0108052/?ref_=adv_li_tt
+- Movie Poster 6: https://www.imdb.com/title/tt0110912/?ref_=nv_sr_srsg_0
+- Movie Theater Doors: https://pxhere.com/en/photo/818035
+- Movie theater windows are same as used on house 2

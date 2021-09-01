@@ -1,0 +1,59 @@
+List all attributions here, this include "self-attributions":
+
+- Imported the following from my past workbooks:
+    - park objects
+    - 2 houses
+    - Theater
+    - Tree
+    - construction objects
+    - cars (semi and Cybertruck)
+
+- Imported 3D models of cars
+    - F1 car one: https://www.turbosquid.com/3d-models/free-max-mode-vehicle-car-1/736991
+    - F1 car two: https://www.turbosquid.com/3d-models/3d-honda-formula1-racer-polygonal-model/351015
+
+- Imported bleachers model
+    - https://www.turbosquid.com/3d-models/free-3ds-model-grand-stand/1022912
+
+- Imported model of a building under construction:
+    - https://www.cgtrader.com/free-3d-models/architectural/other/under-construction-building
+    
+- Used a source to help follow track
+    - https://stackoverflow.com/questions/11179327/orient-objects-rotation-to-a-spline-point-tangent-in-three-js
+
+- Followed THREE.js documentation for importing GLTF models
+    - https://threejs.org/docs/#examples/en/loaders/GLTFLoader
+
+- Followed THREE.js example for making a Catmull-Rom spline
+    - https://threejs.org/examples/?q=extru#webgl_geometry_extrude_shapes
+
+- Referenced an way to make dynamic text out of a canvas used as 2D texture
+    - https://stackoverflow.com/questions/61901198/how-to-add-2d-real-time-dynamic-text-to-a-three-js-scene
+
+- Mozilla example function to get random int:
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+- Method to convert ms to ISO time string (just getting substring from the toISOString function)
+    - https://stackoverflow.com/questions/9763441/milliseconds-to-time-in-javascript
+
+- Rocky road shader from here:
+    - https://thebookofshaders.com/edit.php?log=161128212019
+
+- The textures for my houses are the same as from that workbook. I copied the .txt files from that workbook to here as well.
+    - Houses: 12-03-attributions-houses.txt
+    - Cars: 12-03-attributions-cars.txt
+
+- Textures for ground plane:
+    - Wood chips for playground: https://www.textures.com/download/WoodChips0031/5601
+    - Pavement for driveways: https://www.textures.com/download/PBR0605/139079
+    - Pavement for sidewalks: https://www.textures.com/download/3DScans0489/134059
+    - Parking lot: https://www.textures.com/download/Roads0111/53096
+    - Roads: https://www.textures.com/download/PBR0326/136365
+    - Grass: https://www.textures.com/download/Grass0027/8962
+    - The groundplane was created in Photoshop and all the textures combined onto each other. I started with the environment maps bottom image to try and make it match as much as possible. The image had to be significantly resized to make loading faster and is a little blurry if you zoom too far in. I wanted to include the high quality version but it was over 100MB and just took too long to load unfortunately.
+
+- Environment map: 
+    - https://hdrihaven.com/hdri/?c=outdoor&h=freight_station
+
+
+
