@@ -700,7 +700,7 @@ export class Theater extends GrObject {
     geometry1.uvsNeedUpdate = true;
 
     // create the material and mesh
-    let t1 = new T.TextureLoader().load("./images/buildings/TheaterWrap.png");
+    let t1 = new T.TextureLoader().load("./images/buildings/theaterWrap.png");
     let material1 = new T.MeshStandardMaterial({ map: t1, roughness: 0.75 });
     let mesh1 = new T.Mesh(geometry1, material1);
 
